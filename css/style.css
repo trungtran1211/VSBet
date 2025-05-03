@@ -163,7 +163,7 @@ header {
 
 .box1 {
     min-height: 100vh;
-    background: url("../images/background.png") no-repeat center center/cover; /*change*/
+    background: url("https://ik.imagekit.io/jxxbpd8gv/VSBet/assets/background.png?updatedAt=1746278655453") no-repeat center center/cover; /*change*/
     width: 100%;
     padding-bottom: 20px;
     background-size: cover;
