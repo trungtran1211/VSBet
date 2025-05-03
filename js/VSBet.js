@@ -1,24 +1,24 @@
 
 const imageUrls = [
-    "https://ik.imagekit.io/jxxbpd8gv/VSBet/DSC01372.jpg?updatedAt=1746266669264",
-    "https://ik.imagekit.io/jxxbpd8gv/VSBet/DSC01375.jpg?updatedAt=1746266669631",
-    "https://ik.imagekit.io/jxxbpd8gv/VSBet/DSC01393.jpg?updatedAt=1746266670366",
-    "https://ik.imagekit.io/jxxbpd8gv/VSBet/DSC01395.jpg?updatedAt=1746266670431",
-    "https://ik.imagekit.io/jxxbpd8gv/VSBet/DSC01386.jpg?updatedAt=1746266671079",
-    "https://ik.imagekit.io/jxxbpd8gv/VSBet/DSC01392.jpg?updatedAt=1746266671321",
-    "https://ik.imagekit.io/jxxbpd8gv/VSBet/DSC01394.jpg?updatedAt=1746266671612",
-    "https://ik.imagekit.io/jxxbpd8gv/VSBet/DSC01396.jpg?updatedAt=1746266671646",
-    "https://ik.imagekit.io/jxxbpd8gv/VSBet/DSC01401.jpg?updatedAt=1746266671837",
-    "https://ik.imagekit.io/jxxbpd8gv/VSBet/DSC01399.jpg?updatedAt=1746266672333",
+    // "https://ik.imagekit.io/jxxbpd8gv/VSBet/DSC01372.jpg?updatedAt=1746266669264",
+    // "https://ik.imagekit.io/jxxbpd8gv/VSBet/DSC01375.jpg?updatedAt=1746266669631",
+    // "https://ik.imagekit.io/jxxbpd8gv/VSBet/DSC01393.jpg?updatedAt=1746266670366",
+    // "https://ik.imagekit.io/jxxbpd8gv/VSBet/DSC01395.jpg?updatedAt=1746266670431",
+    // "https://ik.imagekit.io/jxxbpd8gv/VSBet/DSC01386.jpg?updatedAt=1746266671079",
+    // "https://ik.imagekit.io/jxxbpd8gv/VSBet/DSC01392.jpg?updatedAt=1746266671321",
+    // "https://ik.imagekit.io/jxxbpd8gv/VSBet/DSC01394.jpg?updatedAt=1746266671612",
+    // "https://ik.imagekit.io/jxxbpd8gv/VSBet/DSC01396.jpg?updatedAt=1746266671646",
     "https://ik.imagekit.io/jxxbpd8gv/VSBet/DSC01409.jpg?updatedAt=1746266675105",
     "https://ik.imagekit.io/jxxbpd8gv/VSBet/DSC01412.jpg?updatedAt=1746266685973",
+    "https://ik.imagekit.io/jxxbpd8gv/VSBet/DSC01401.jpg?updatedAt=1746266671837",
+    "https://ik.imagekit.io/jxxbpd8gv/VSBet/DSC01399.jpg?updatedAt=1746266672333",
     "https://ik.imagekit.io/jxxbpd8gv/VSBet/DSC01414.jpg?updatedAt=1746266686262",
     "https://ik.imagekit.io/jxxbpd8gv/VSBet/DSC01423.jpg?updatedAt=1746266687027",
     "https://ik.imagekit.io/jxxbpd8gv/VSBet/DSC01424.jpg?updatedAt=1746266687767",
     "https://ik.imagekit.io/jxxbpd8gv/VSBet/DSC01432.jpg?updatedAt=1746266688793",
     "https://ik.imagekit.io/jxxbpd8gv/VSBet/DSC01431.jpg?updatedAt=1746266689503",
-    "https://ik.imagekit.io/jxxbpd8gv/VSBet/DSC01447.jpg?updatedAt=1746266691414",
     "https://ik.imagekit.io/jxxbpd8gv/VSBet/DSC01442.jpg?updatedAt=1746266691556",
+    "https://ik.imagekit.io/jxxbpd8gv/VSBet/DSC01447.jpg?updatedAt=1746266691414",
     "https://ik.imagekit.io/jxxbpd8gv/VSBet/DSC01455.jpg?updatedAt=1746266692063",
     "https://ik.imagekit.io/jxxbpd8gv/VSBet/DSC01451.jpg?updatedAt=1746266694141",
     "https://ik.imagekit.io/jxxbpd8gv/VSBet/DSC01474.jpg?updatedAt=1746266702241",
@@ -291,8 +291,8 @@ let currentIndex = 0;
 const loadCount = 13;
 
 function loadImages() {
-  loadMoreBtn.textContent = "Loading..."; // Thay đổi chữ nút
-  loadingIndicator.style.display = "block"; // Hiện loading
+  loadMoreBtn.textContent = "Loading..."; 
+  loadingIndicator.style.display = "block";
 
   setTimeout(() => {
     let shown = 0;
@@ -314,13 +314,13 @@ function loadImages() {
       shown++;
     }
 
-    loadingIndicator.style.display = "none"; // Ẩn loading sau khi xong
-    loadMoreBtn.textContent = "Xem thêm"; // Đặt lại chữ nút
+    loadingIndicator.style.display = "none";
+    loadMoreBtn.textContent = "Xem thêm"; 
 
     if (currentIndex >= imageUrls.length) {
       loadMoreBtn.style.display = "none";
     }
-  }, 500); // Giả lập thời gian tải 0.5 giây
+  }, 1000);
 }
 
 if (imageUrls.length === 0) {
