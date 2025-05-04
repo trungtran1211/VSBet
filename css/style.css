@@ -337,20 +337,20 @@ h2::after {
 .box2-container {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: end;
     gap: 30px;
 }
 .box2-left {
-    width: 50%;
+    width: 40%;
     height: 100%;
     display: flex;
     align-items: end;
     min-height: 100vh;
 }
 .box2-right {
-    width: 50%;
+    width: 60%;
     background: rgba(70, 70, 70, 0.3);
-    padding: 20px
+    padding: 20px;
 }
 .box2-right h2 {
     font-family: svn-every;
@@ -369,6 +369,7 @@ h2::after {
 .box2-right ul {
     padding-left: 30px;
     list-style: disc;
+    margin-bottom: 10px;
 }
 .box2-right ul li {
     font-family: svn-bree;
@@ -417,7 +418,7 @@ h2::after {
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: end;
     align-items: center;
 }
 .box3-container {
@@ -454,6 +455,7 @@ h2::after {
 .box3-right ul {
     padding-left: 30px;
     list-style: disc;
+    margin-bottom: 20px;
 }
 .box3-right ul li {
     font-family: svn-bree;
@@ -563,6 +565,10 @@ footer {
     background: url("../images/bg/bg-ft.png") no-repeat center center/cover;
     width: 100%;
     padding: 50px 0px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 .ft-container {
     display: flex;
