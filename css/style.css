@@ -270,6 +270,14 @@ h2::after {
     width: 60%;
 }
 @media (max-width: 768px) {
+    .box1 {
+        min-height: 100vh;
+        background: url("https://ik.imagekit.io/jxxbpd8gv/VSBet/assets/background2.png?updatedAt=1746338693591") no-repeat center center/cover; /*change*/
+        width: 100%;
+        padding-bottom: 20px;
+        background-size: cover;
+    
+    }
     .box1-list {
         padding-top: 80px;
         display: flex;
