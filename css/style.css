@@ -512,7 +512,7 @@ h2::after {
     position: absolute;
     top: 50%;
     transform: translateY(-50%) scale(0.9);
-    right: -60px;
+    right: 0px;
 }
 .box4 h2 {
     font-family: svn-every;
