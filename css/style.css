@@ -103,6 +103,7 @@ header {
 .bg-menu {
     display: none;
 }
+
 @media (max-width: 768px) {
     header {
         padding: 10px 0px;
@@ -184,10 +185,10 @@ header {
     justify-content: center;
     align-items: center;
     gap: 50px;
-    padding-top: 80px;
-    margin-bottom: 30px;
+    padding-top: 90px;
+    margin-bottom: 20px;
 }
-.box1-item:first-child img {
+/* .box1-item:first-child img {
     width: 200px;
 }
 .box1-item:nth-child(2) img {
@@ -198,6 +199,12 @@ header {
 }
 .box1-item:last-child img {
     width: 100px;
+} */
+.box1-video {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
 }
 .box1-about {
     padding: 20px;
@@ -254,14 +261,21 @@ h2::after {
 .box1-list-icon img {
     width: 60px;
 }
-
+.swiper-slide {
+    width: 200px !important;
+    display: flex;
+    justify-content: center;
+}
+.box1-video video {
+    width: 60%;
+}
 @media (max-width: 768px) {
     .box1-list {
         padding-top: 80px;
-        flex-direction: column;
-        gap: 20px;
+        display: flex;
+        gap: 0;
     }
-    .box1-item:first-child img {
+    /* .box1-item:first-child img {
         width: 150px;
     }
     .box1-item:nth-child(2) img {
@@ -272,7 +286,7 @@ h2::after {
     }
     .box1-item:last-child img {
         width: 80px;
-    }
+    } */
     .box1-about {
         padding: 20px;
         max-width: 100%;
@@ -289,6 +303,16 @@ h2::after {
     }
     .box1-list-icon {
         gap: 30px;
+    }
+    
+    .box1-video video {
+        width: 90%;
+    }
+    .box1-video {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
     }
 }
 
@@ -606,7 +630,43 @@ footer {
         width: 50px;
     }
 }
-
+footer hr {
+    width: 70%;
+    margin: 20px auto;
+    height: 1px;
+    background: #ffffff;
+    border: none;
+}
+.taitro-container {
+    padding: 20px 0px 0px;
+}
+.taitro-left h2 {
+    font-family: svn-every;
+    color: var(--white);
+    font-size: 30px;
+    line-height: normal;
+    margin-bottom: 10px;
+}
+.taitro-left p{
+    font-family: svn-bree;
+    color: var(--white);
+    font-size: 16px;
+    line-height: normal;
+    margin-bottom: 20px;
+}
+@media (max-width: 768px) {
+    .taitro-container {
+        padding: 20px 16px 0px;
+    }
+    .taitro-left h2 {
+        font-size: 25px;
+        margin-bottom: 10px;
+    }
+    .taitro-left p{
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+}
 
 
 @media (max-width: 768px) {

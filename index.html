@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./css/aos.css" />
     <link rel="stylesheet" href="./css/fullpage.min.css" />
     <script src="./js/fullpage.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./css/style.css">
     <title>VSBet</title>
 </head>
@@ -72,21 +73,27 @@
             <div class="section">
                 <div class="box1">
                     <div class="container">
-                        <div class="box1-list">
-                            <div class="box1-item" data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="300">
-                                <img src="./images/logo-champion.png" alt="logo champion">
-                            </div>
-                            <div class="box1-item" data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="600">
-                                <img src="./images/logo-europa.png" alt="logo europa">
-                            </div>
-                            <div class="box1-item" data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="900">
-                                <img src="./images/logo-premier.png" alt="logo premier">
-                            </div>
-                            <div class="box1-item" data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="1200">
-                                <img src="./images/logo-emirates.png" alt="logo emirates">
+                        <div class="swiper mySwiper">
+                            <div class="box1-list swiper-wrapper">
+                                <div class="box1-item swiper-slide" data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="300">
+                                    <img src="./images/logo-cp.png" alt="logo champion">
+                                </div>
+                                <div class="box1-item swiper-slide" data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="600">
+                                    <img src="./images/logo-eu.png" alt="logo europa">
+                                </div>
+                                <div class="box1-item swiper-slide" data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="900">
+                                    <img src="./images/logo-pre.png" alt="logo premier">
+                                </div>
+                                <div class="box1-item swiper-slide" data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="1200">
+                                    <img src="./images/logo-em.png" alt="logo emirates">
+                                </div>
+                                
                             </div>
                         </div>
-                        <div class="box1-about" data-aos="flip-up" data-aos-easing="linear" data-aos-duration="1200">
+                        <div class="box1-video">
+                            <video src="https://ik.imagekit.io/jxxbpd8gv/VSBet/assets/TVC.mp4?updatedAt=1746334420843" controls autoplay muted></video>
+                        </div>
+                        <div class="box1-about">
                             <h1>Về chúng tôi</h1>
                             <p>VSBet" chính thức hoạt động từ năm 2011. Uy tín, chất lượng, phục vụ tận tâm là tôn chỉ của công ty chúng tôi. Quy tụ những thành viên ưu tú trong ngành cá cược trên khắp thế giới, chúng tôi có một đội ngũ giàu kinh nghiệm, chuyên nghiệp để hệ thống cá cược trực tuyến luôn hoàn thiện nhất, mang đến trải nghiệm tốt nhất cho người chơi, là một trong web cá cược trực tuyến uy tín hàng đầu.
                                 <br>
@@ -187,6 +194,17 @@
                     </div>
                 </box5> -->
                 <footer>
+                    <div class="ft-taitro">
+                        <div class="container">
+                            <div class="taitro-container">
+                                <div class="taitro-left">
+                                    <h2>Tài trợ</h2>
+                                    <p>VSBet tự hào là nhà tài trợ chính thức cho MONACO và 5 giải đấu lớn.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
                     <div class="container">
                         <div class="ft-container">
                             <div class="ft1">
@@ -232,6 +250,30 @@
         </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 4,
+            spaceBetween: 20,
+            loop: true,
+            breakpoints: {
+                0: {
+                    slidesPerView: 1.9,
+                    loop: true,
+                },
+                768: { 
+                    slidesPerView: 4,
+                }
+                },
+                loop: true,
+                freeMode: false,
+                autoplay: {
+                    delay: 3000,
+                    reverseDirection: true,
+                    disableOnInteraction: false,
+                },
+        });
+    </script>
     <script src="./js/aos.js"></script>
     <script>
         AOS.init();
