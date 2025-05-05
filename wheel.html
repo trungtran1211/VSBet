@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vòng Quay May Mắn</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        h2 {
+            color: #ff4081;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .wheel-container {
+            position: relative;
+            width: 350px;
+            height: 350px;
+            margin: 30px auto;
+        }
+        
+        #wheel {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 15px solid #ffd700;
+            position: relative;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+            background: conic-gradient(
+                #ffd700 0% 16.6%,     /* Giải nhất */
+                #ff8c00 16.6% 33.2%,  /* Giải nhì */
+                #ff4500 33.2% 49.8%,  /* Giải ba */
+                #4caf50 49.8% 66.4%,  /* Giải 4 */
+                #2196f3 66.4% 83%,    /* Giải 5 */
+                #9c27b0 83% 100%      /* Giải 6 */
+            );
+            transition: transform 4s cubic-bezier(0.33, 1, 0.68, 1);
+            overflow: hidden;
+        }
+        
+        .wheel-item {
+            position: absolute;
+            width: 50%;
+            height: 50%;
+            transform-origin: 100% 100%;
+            left: 0;
+            top: 0;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 40px;
+            box-sizing: border-box;
+            color: white;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        
+        .wheel-item i {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        
+        .pointer {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 25px solid transparent;
+            border-right: 25px solid transparent;
+            border-top: 50px solid #ff4081;
+            z-index: 10;
+            filter: drop-shadow(0 0 5px rgba(0,0,0,0.3));
+        }
+        
+        .pointer:after {
+            content: "↓";
+            position: absolute;
+            top: -40px;
+            left: -15px;
+            font-size: 30px;
+            color: white;
+        }
+        
+        #spinBtn {
+            padding: 15px 40px;
+            font-size: 20px;
+            cursor: pointer;
+            background: linear-gradient(to right, #ff4081, #ff6b6b);
+            border: none;
+            color: white;
+            border-radius: 50px;
+            box-shadow: 0 5px 15px rgba(255, 64, 129, 0.4);
+            transition: all 0.3s ease;
+            margin-top: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        #spinBtn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 64, 129, 0.6);
+        }
+        
+        #spinBtn:active {
+            transform: translateY(1px);
+        }
+        
+        .popup, .phone-popup {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+        }
+        
+        .popup-content, .phone-content {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            animation: popup 0.4s ease-out;
+        }
+        
+        @keyframes popup {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        
+        .close-btn {
+            margin-top: 20px;
+            padding: 10px 25px;
+            cursor: pointer;
+            background: linear-gradient(to right, #333, #555);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .close-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+        }
+        
+        input[type="text"] {
+            padding: 12px 15px;
+            width: 80%;
+            font-size: 16px;
+            border: 2px solid #ddd;
+            border-radius: 50px;
+            margin: 15px 0;
+            outline: none;
+            transition: all 0.3s;
+        }
+        
+        input[type="text"]:focus {
+            border-color: #ff4081;
+            box-shadow: 0 0 8px rgba(255, 64, 129, 0.4);
+        }
+        
+        .logo {
+            width: 100px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Vòng Quay May Mắn</h2>
+<div class="wheel-container">
+    <div id="wheel"></div>
+    <div class="pointer"></div>
+</div>
+<button id="spinBtn">Quay</button>
+
+<!-- Popup trúng thưởng -->
+<div id="resultPopup" class="popup" style="display:none;">
+    <div class="popup-content">
+        <h3 id="prizeText"></h3>
+        <button class="close-btn" onclick="document.getElementById('resultPopup').style.display='none'">Đóng</button>
+    </div>
+</div>
+
+<!-- Popup nhập số điện thoại -->
+<div id="phonePopup" class="phone-popup" style="display:none;">
+    <div class="phone-content">
+        <img src="https://cdn-icons-png.flaticon.com/512/3062/3062633.png" alt="Gift" class="logo">
+        <h3>Nhập số điện thoại để tham gia</h3>
+        <input type="text" id="phoneNumber" placeholder="Nhập số điện thoại (10 số)">
+        <br>
+        <button class="close-btn" onclick="savePhoneNumber()">Xác nhận</button>
+    </div>
+</div>
+
+<script>
+    const prizes = [
+        { label: "Iphone 16 Pro Max", win: false, icon: "mobile-screen-button" },
+        { label: "iPad M4", win: false, icon: "tablet-screen-button" },
+        { label: "AirPods 3", win: false, icon: "headphones" },
+        { label: "388,000 VND", win: true, chance: 0.10, icon: "money-bill-wave" },
+        { label: "188,000 VND", win: true, chance: 0.30, icon: "money-bill" },
+        { label: "88,000 VND", win: true, chance: 0.60, icon: "coins" },
+    ];
+
+    const segmentAngle = 360 / prizes.length;
+    let angle = 0;
+    let isSpinning = false;
+
+    // Tạo giao diện các phần thưởng
+    function createWheelItems() {
+        const wheel = document.getElementById('wheel');
+        prizes.forEach((prize, index) => {
+            const item = document.createElement('div');
+            item.className = 'wheel-item';
+            item.style.transform = `rotate(${index * segmentAngle}deg) skewY(${90 - segmentAngle}deg)`;
+            item.innerHTML = `
+                <i class="fas fa-${prize.icon}"></i>
+                <span>${prize.label}</span>
+            `;
+            wheel.appendChild(item);
+        });
+    }
+
+    // Hiển thị popup nhập số điện thoại nếu chưa có
+    window.onload = function () {
+        createWheelItems();
+        const phone = sessionStorage.getItem("tempPhone");
+        if (!phone) {
+            document.getElementById("phonePopup").style.display = "flex";
+        }
+    };
+
+    // Lưu số điện thoại
+    function savePhoneNumber() {
+        const phoneInput = document.getElementById("phoneNumber").value.trim();
+        if (!/^0\d{9}$/.test(phoneInput)) {
+            alert("Vui lòng nhập đúng số điện thoại (10 số bắt đầu bằng 0)");
+            return;
+        }
+        sessionStorage.setItem("tempPhone", phoneInput);
+        document.getElementById("phonePopup").style.display = "none";
+    }
+
+    // Xử lý nút quay
+    document.getElementById("spinBtn").addEventListener("click", spin);
+
+    function spin() {
+        if (isSpinning) return;
+        isSpinning = true;
+
+        const phone = sessionStorage.getItem("tempPhone");
+        if (!phone) {
+            alert("Bạn chưa nhập số điện thoại!");
+            isSpinning = false;
+            return;
+        }
+
+        const spunUsers = JSON.parse(localStorage.getItem("spunUsers") || "[]");
+        if (spunUsers.includes(phone)) {
+            alert("Số điện thoại này đã quay rồi!");
+            isSpinning = false;
+            return;
+        }
+
+        // Tính phần thưởng dựa trên xác suất
+        const rand = Math.random();
+        let cumulative = 0;
+        let selectedPrizeIndex = -1;
+
+        for (let i = 0; i < prizes.length; i++) {
+            const p = prizes[i];
+            if (p.win) {
+                cumulative += p.chance;
+                if (rand < cumulative) {
+                    selectedPrizeIndex = i;
+                    break;
+                }
+            }
+        }
+
+        // Nếu không trúng phần thưởng có win=true => chọn random phần thưởng không win
+        if (selectedPrizeIndex === -1) {
+            const nonWinning = prizes.map((p, i) => ({ ...p, index: i })).filter(p => !p.win);
+            selectedPrizeIndex = nonWinning[Math.floor(Math.random() * nonWinning.length)].index;
+        }
+
+        const spins = 5; // số vòng quay
+        const rotateTo = 360 * spins + (360 - selectedPrizeIndex * segmentAngle - segmentAngle / 2);
+
+        angle += rotateTo;
+
+        document.getElementById("wheel").style.transform = `rotate(${angle}deg)`;
+
+        setTimeout(() => {
+            const selectedPrize = prizes[selectedPrizeIndex];
+            document.getElementById("prizeText").textContent = `Bạn đã trúng: ${selectedPrize.label}`;
+            document.getElementById("resultPopup").style.display = "flex";
+
+            // Lưu người dùng đã quay
+            spunUsers.push(phone);
+            localStorage.setItem("spunUsers", JSON.stringify(spunUsers));
+            isSpinning = false;
+        }, 4000); // thời gian khớp với CSS transition
+    }
+</script>
+
+
+</body>
+</html>

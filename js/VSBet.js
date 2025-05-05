@@ -18,13 +18,13 @@ const imageUrls = [
     "https://ik.imagekit.io/jxxbpd8gv/VSBet/DSC01432.jpg?updatedAt=1746266688793",
     "https://ik.imagekit.io/jxxbpd8gv/VSBet/DSC01431.jpg?updatedAt=1746266689503",
     "https://ik.imagekit.io/jxxbpd8gv/VSBet/DSC01442.jpg?updatedAt=1746266691556",
+    "https://ik.imagekit.io/jxxbpd8gv/VSBet/DSC01474.jpg?updatedAt=1746266702241",
+    "https://ik.imagekit.io/jxxbpd8gv/VSBet/DSC01490.jpg?updatedAt=1746266704406",
     "https://ik.imagekit.io/jxxbpd8gv/VSBet/DSC01447.jpg?updatedAt=1746266691414",
     "https://ik.imagekit.io/jxxbpd8gv/VSBet/DSC01455.jpg?updatedAt=1746266692063",
     "https://ik.imagekit.io/jxxbpd8gv/VSBet/DSC01451.jpg?updatedAt=1746266694141",
-    "https://ik.imagekit.io/jxxbpd8gv/VSBet/DSC01474.jpg?updatedAt=1746266702241",
-    "https://ik.imagekit.io/jxxbpd8gv/VSBet/DSC01481.jpg?updatedAt=1746266704009",
-    "https://ik.imagekit.io/jxxbpd8gv/VSBet/DSC01490.jpg?updatedAt=1746266704406",
     "https://ik.imagekit.io/jxxbpd8gv/VSBet/DSC01508.jpg?updatedAt=1746266705865",
+    "https://ik.imagekit.io/jxxbpd8gv/VSBet/DSC01481.jpg?updatedAt=1746266704009",
     "https://ik.imagekit.io/jxxbpd8gv/VSBet/DSC01506.jpg?updatedAt=1746266705767",
     "https://ik.imagekit.io/jxxbpd8gv/VSBet/DSC01469.jpg?updatedAt=1746266707256",
     "https://ik.imagekit.io/jxxbpd8gv/VSBet/DSC01467.jpg?updatedAt=1746266708381",
@@ -288,7 +288,7 @@ const loadMoreBtn = document.getElementById("loadMore");
 const loadingIndicator = document.getElementById("loadingIndicator");
 
 let currentIndex = 0;
-const loadCount = 13;
+const loadCount = 15;
 
 function loadImages() {
   loadMoreBtn.textContent = "Loading..."; 
