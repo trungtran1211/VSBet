@@ -86,15 +86,6 @@
             filter: drop-shadow(0 0 5px rgba(0,0,0,0.3));
         }
         
-        .pointer:after {
-            content: "↓";
-            position: absolute;
-            top: -40px;
-            left: -15px;
-            font-size: 30px;
-            color: white;
-        }
-        
         #spinBtn {
             padding: 15px 40px;
             font-size: 20px;
@@ -206,7 +197,7 @@
 <!-- Popup nhập số điện thoại -->
 <div id="phonePopup" class="phone-popup" style="display:none;">
     <div class="phone-content">
-        <img src="https://cdn-icons-png.flaticon.com/512/3062/3062633.png" alt="Gift" class="logo">
+        <img src="/api/placeholder/100/100" alt="Gift" class="logo">
         <h3>Nhập số điện thoại để tham gia</h3>
         <input type="text" id="phoneNumber" placeholder="Nhập số điện thoại (10 số)">
         <br>
@@ -216,11 +207,11 @@
 
 <script>
     const prizes = [
-        { label: "Iphone 16 Pro Max", win: false, icon: "mobile-screen-button" },
-        { label: "iPad M4", win: false, icon: "tablet-screen-button" },
-        { label: "AirPods 3", win: false, icon: "headphones" },
+        { label: "Iphone 16 Pro Max", win: false, icon: "https://pngimg.com/d/iphone_12_PNG23.png" },
         { label: "388,000 VND", win: true, chance: 0.10, icon: "money-bill-wave" },
+        { label: "iPad M4", win: false, icon: "tablet-screen-button" },
         { label: "188,000 VND", win: true, chance: 0.30, icon: "money-bill" },
+        { label: "AirPods 3", win: false, icon: "https://traidepbaniphone.com/upload/product/airpods-3-thumb-650x650-4985.png" },
         { label: "88,000 VND", win: true, chance: 0.60, icon: "coins" },
     ];
 
@@ -234,8 +225,9 @@
         prizes.forEach((prize, index) => {
             const item = document.createElement('div');
             item.className = 'wheel-item';
-            item.style.transform = `rotate(${index * segmentAngle}deg) skewY(${90 - segmentAngle}deg)`;
+            item.style.transform = `rotate(${index * segmentAngle}deg)`;
             item.innerHTML = `
+                <img src="${prize.icon}" alt="${prize.label}" style="width: 50px; height: 50px;">
                 <i class="fas fa-${prize.icon}"></i>
                 <span>${prize.label}</span>
             `;
@@ -243,11 +235,36 @@
         });
     }
 
-    // Hiển thị popup nhập số điện thoại nếu chưa có
+    // Kiểm tra xem có thể sử dụng localStorage và sessionStorage không
+    let canUseStorage = false;
+    try {
+        localStorage.setItem("test", "test");
+        localStorage.removeItem("test");
+        sessionStorage.setItem("test", "test");
+        sessionStorage.removeItem("test");
+        canUseStorage = true;
+    } catch (e) {
+        console.log("Storage không khả dụng, sử dụng biến trong bộ nhớ.");
+    }
+
+    // Biến lưu số điện thoại và danh sách người đã quay trong bộ nhớ (fallback)
+    let userPhone = "";
+    let spunUsers = [];
+
+    // Kiểm tra người dùng đã quay chưa từ localStorage nếu có thể
+    if (canUseStorage) {
+        try {
+            userPhone = sessionStorage.getItem("tempPhone") || "";
+            spunUsers = JSON.parse(localStorage.getItem("spunUsers") || "[]");
+        } catch (e) {
+            console.log("Lỗi khi đọc dữ liệu từ storage:", e);
+        }
+    }
+
+    // Hiển thị popup nhập số điện thoại khi tải trang
     window.onload = function () {
         createWheelItems();
-        const phone = sessionStorage.getItem("tempPhone");
-        if (!phone) {
+        if (!userPhone) {
             document.getElementById("phonePopup").style.display = "flex";
         }
     };
@@ -259,7 +276,18 @@
             alert("Vui lòng nhập đúng số điện thoại (10 số bắt đầu bằng 0)");
             return;
         }
-        sessionStorage.setItem("tempPhone", phoneInput);
+        
+        userPhone = phoneInput;
+        
+        // Lưu vào sessionStorage nếu có thể
+        if (canUseStorage) {
+            try {
+                sessionStorage.setItem("tempPhone", userPhone);
+            } catch (e) {
+                console.log("Không thể lưu vào sessionStorage:", e);
+            }
+        }
+        
         document.getElementById("phonePopup").style.display = "none";
     }
 
@@ -270,62 +298,65 @@
         if (isSpinning) return;
         isSpinning = true;
 
-        const phone = sessionStorage.getItem("tempPhone");
-        if (!phone) {
+        if (!userPhone) {
             alert("Bạn chưa nhập số điện thoại!");
             isSpinning = false;
             return;
         }
 
-        const spunUsers = JSON.parse(localStorage.getItem("spunUsers") || "[]");
-        if (spunUsers.includes(phone)) {
+        if (spunUsers.includes(userPhone)) {
             alert("Số điện thoại này đã quay rồi!");
             isSpinning = false;
             return;
         }
 
-        // Tính phần thưởng dựa trên xác suất
+        // Chỉ chọn các giải tiền (win=true)
+        const winningPrizes = prizes.filter(p => p.win);
         const rand = Math.random();
         let cumulative = 0;
-        let selectedPrizeIndex = -1;
+        let selectedPrize = null;
 
-        for (let i = 0; i < prizes.length; i++) {
-            const p = prizes[i];
-            if (p.win) {
-                cumulative += p.chance;
-                if (rand < cumulative) {
-                    selectedPrizeIndex = i;
-                    break;
-                }
+        for (let i = 0; i < winningPrizes.length; i++) {
+            cumulative += winningPrizes[i].chance;
+            if (rand < cumulative) {
+                selectedPrize = winningPrizes[i];
+                break;
             }
         }
 
-        // Nếu không trúng phần thưởng có win=true => chọn random phần thưởng không win
-        if (selectedPrizeIndex === -1) {
-            const nonWinning = prizes.map((p, i) => ({ ...p, index: i })).filter(p => !p.win);
-            selectedPrizeIndex = nonWinning[Math.floor(Math.random() * nonWinning.length)].index;
-        }
-
-        const spins = 5; // số vòng quay
-        const rotateTo = 360 * spins + (360 - selectedPrizeIndex * segmentAngle - segmentAngle / 2);
-
-        angle += rotateTo;
-
-        document.getElementById("wheel").style.transform = `rotate(${angle}deg)`;
+        // Tìm index của giải thưởng đã chọn trong mảng prizes gốc
+        const selectedPrizeIndex = prizes.findIndex(p => p.label === selectedPrize.label);
+        
+        // Tính góc quay dựa trên vị trí của mũi tên
+        const spins = 5; // Số vòng quay hoàn chỉnh
+        
+        // Góc quay = số vòng * 360 + góc để mũi tên chỉ vào phần tử được chọn
+        const prizeAngle = selectedPrizeIndex * segmentAngle;
+        angle = spins * 360 + prizeAngle;
+        
+        document.getElementById("wheel").style.transform = `rotate(-${angle}deg)`;
 
         setTimeout(() => {
-            const selectedPrize = prizes[selectedPrizeIndex];
             document.getElementById("prizeText").textContent = `Bạn đã trúng: ${selectedPrize.label}`;
             document.getElementById("resultPopup").style.display = "flex";
 
-            // Lưu người dùng đã quay
-            spunUsers.push(phone);
-            localStorage.setItem("spunUsers", JSON.stringify(spunUsers));
+            // Thêm số điện thoại vào danh sách đã quay
+            spunUsers.push(userPhone);
+            
+            // Lưu vào localStorage nếu có thể sử dụng
+            if (canUseStorage) {
+                try {
+                    localStorage.setItem("spunUsers", JSON.stringify(spunUsers));
+                    console.log("Đã lưu số điện thoại vào danh sách đã quay.");
+                } catch (e) {
+                    console.log("Không thể lưu vào localStorage:", e);
+                }
+            }
+            
             isSpinning = false;
-        }, 4000); // thời gian khớp với CSS transition
+        }, 4000);
     }
 </script>
-
 
 </body>
 </html>
