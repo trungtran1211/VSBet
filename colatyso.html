@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colatyso.com</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.15/tailwind.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/@tailwindcss/typography@0.4.x/dist/typography.min.css">
+    <link rel="stylesheet" href="./css/header.css">
+</head>
+
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.11.1/tocbot.min.js"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: calc(64px + 16px);
+        }
+
+        .table-of-contents {
+            li {
+
+                ul,
+                ol {
+                    padding-left: 1em;
+                }
+            }
+        }
+
+        body {
+            background: url("../images/bg/bg1.png") no-repeat center center/cover;
+            color: #FFF;
+        }
+
+        main {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        article {
+            padding-left: 2em;
+            flex-basis: 0;
+            flex-grow: 999;
+            min-width: 50%;
+        }
+
+        aside {
+            flex-grow: 1;
+            flex-basis: 200px;
+            align-self: start;
+            position: sticky;
+            top: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-family: svn-agency;
+            font-size: 20px;
+            font-weight: 400;
+        }
+
+        @media (max-width: 768px) {
+            aside {
+                position: fixed;
+                width: 70%;
+                left: 0;
+                transform: translateX(-100%);
+                background-color: #000;
+                top: 100px;
+                flex-basis: 100%;
+                font-size: 18px;
+                min-height: auto;
+                padding: 20px;
+            }
+
+            aside.active {
+                transform: translateX(0);
+            }
+
+            article {
+                flex-basis: 100%;
+                padding-left: 0;
+            }
+            .menu-aside {
+                position: fixed;
+                top: 50%;
+                right: 20px;
+            }
+        }
+
+        .prose,
+        .prose h1,
+        .prose h2,
+        .prose h3 {
+            color: #FFF;
+        }
+
+        .prose a {
+            color: #FFF;
+            text-decoration: underline;
+        }
+
+        kbd {
+            border: 1px solid grey;
+        }
+        .box4-img1 {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            left: -60px;
+        }
+        .box4-img2 {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%) scale(0.9);
+            right: 0px;
+        }
+    </style>
+    <header data-aos="fade-down" data-aos-easing="linear" data-aos-duration="800">
+        <div class="container">
+            <div class="header-container">
+                <div class="header-t">
+                    <div class="logo">
+                        <img src="./images/Logo.png" alt="">
+                    </div>
+                    <div class="header-bt pc">
+                        <nav class="list-menu">
+                            <ul>
+                                <li><a href="https://vsbet80.com/">Trang chủ</a></li>
+                                <li><a href="/colatv-live.html">Trực tiếp bóng đá</a></li>
+                                <li><a href="#ty-so-bong-da">Tỷ số bóng đá</a></li>
+                                <li><a href="#hoat-dong-xa-hoi">Hoạt động xã hội</a></li>
+                                <li><a href="#tai-tro">Tài trợ</a></li>
+                                <li><a href="https://vsbet80.com/customerService">Liên hệ</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="pc">
+                        <a href="https://vsbet80.com/login" class="btn pc">Đăng nhập</a>
+                        <a href="https://vsbet80.com/registered" class="btn pc">Đăng ký</a>
+                    </div>
+                    <div class="menu mb">
+                        <img src="./images/menu.svg" alt="">
+                    </div>
+                </div>
+                <div class="bg-menu"></div>
+                <div class="header-bt mb header-bt-mb">
+                    <div class="close mb">
+                        <img src="./images/close.svg" alt="">
+                    </div>
+                    <div class="mb">
+                        <div class="logo-mb">
+                            <img src="./images/Logo.png" alt="">
+                        </div>
+                        <div class="box-btn">
+                            <a href="https://vsbet80.com/login" class="btn mb">Đăng nhập</a>
+                            <a href="https://vsbet80.com/registered" class="btn mb">Đăng ký</a>
+                        </div>
+                    </div>
+                    <nav class="list-menu">
+                        <ul>
+                            <li><a href="https://vsbet80.com/">Trang chủ</a></li>
+                            <li><a href="/colatv-live.html">Trực tiếp bóng đá</a></li>
+                            <li><a href="#ty-so-bong-da">Tỷ số bóng đá</a></li>
+                            <li><a href="#hoat-dong-xa-hoi">Hoạt động xã hội</a></li>
+                            <li><a href="#tai-tro">Tài trợ</a></li>
+                            <li><a href="https://vsbet80.com/customerService">Liên hệ</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="box4-img1 pc">
+        <img src="./images/bg/ct2.png" alt="">
+    </div>
+    <div class="box4-img2 pc">
+        <img src="./images/bg/ct4.png" alt="">
+    </div>
+    <main class="max-w-6xl mx-auto my-20 flex flex-col lg:flex-row gap-6 px-4">
+        
+        <aside class="w-full lg:w-1/4 mb-6 lg:mb-0">
+            <div class="table-of-contents" id="toc"></div>
+        </aside>
+        <div class="menu-aside mb">
+            <svg class="w-10 z-[999] relative" fill="#FFF" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 472.586 472.586" xml:space="preserve">
+                <g>
+                    <g>
+                        <rect width="124.721" height="124.721" />
+                    </g>
+                </g>
+                <g>
+                    <g>
+                        <rect x="173.952" width="124.721" height="124.721" />
+                    </g>
+                </g>
+                <g>
+                    <g>
+                        <rect x="347.865" width="124.721" height="124.721" />
+                    </g>
+                </g>
+                <g>
+                    <g>
+                        <rect y="173.952" width="124.721" height="124.721" />
+                    </g>
+                </g>
+                <g>
+                    <g>
+                        <rect x="173.952" y="173.952" width="124.721" height="124.721" />
+                    </g>
+                </g>
+                <g>
+                    <g>
+                        <rect x="347.865" y="173.952" width="124.721" height="124.721" />
+                    </g>
+                </g>
+                <g>
+                    <g>
+                        <rect y="347.865" width="124.721" height="124.721" />
+                    </g>
+                </g>
+                <g>
+                    <g>
+                        <rect x="173.952" y="347.865" width="124.721" height="124.721" />
+                    </g>
+                </g>
+                <g>
+                    <g>
+                        <rect x="347.865" y="347.865" width="124.721" height="124.721" />
+                    </g>
+                </g>
+            </svg>
+        </div>
+        <article class="prose w-full lg:w-3/4 xl:my-20">
+            <p>Tỷ số bóng đá luôn là thông tin được anh em quan tâm hàng đầu sau mỗi trận đấu. Cập nhật nhanh chóng, chính xác giúp không bỏ lỡ bất kỳ diễn biến hấp dẫn nào.</p>
+            <h1 id="colatyso"><b>Colatyso.com</b> - Trang tỷ số bóng đá nhanh và chính xác</h1>
+            <p><b>Colatyso.com</b> là trang tỷ số bóng đá hàng đầu, mang đến thông tin nhanh chóng, chính xác và liên tục về kết quả các trận đấu trên toàn thế giới. Với giao diện thân thiện, dữ liệu đa dạng, trang web này giúp người hâm mộ dễ dàng theo dõi mọi diễn biến hấp dẫn. Hãy cùng chúng tôi khám phá những thông tin hấp dẫn về trang web này ở phần dưới đây.
+            </p>
+
+            <h2 id="so-luoc">Sơ lược vài nét về trang tỷ số bóng đá</h2>
+            <img src="./images/images-tyso/image1.png" alt="">
+            <p>Đôi nét nổi bật về trang tỷ số bóng đá
+                Trang tỷ số bóng đá là một nền tảng cung cấp thông tin về các trận đấu bóng đá diễn ra trên toàn thế giới. Tại đây, người dùng có thể dễ dàng theo dõi tỷ số trực tiếp, lịch thi đấu và kết quả bóng đá trực tuyến các giải đấu lớn. Các trang này cung cấp dữ liệu nhanh chóng và chính xác, giúp người hâm mộ không bỏ lỡ bất kỳ diễn biến quan trọng nào. Ngoài ra, một số trang còn cung cấp thống kê chi tiết về các đội bóng, cầu thủ và các trận đấu.
+                Các trang tỷ số bóng đá còn cho phép người dùng xem lại các trận đấu đã kết thúc, giúp họ có cái nhìn tổng quan về các trận đấu qua các màn hình trực quan và dễ hiểu. Những tính năng này được thiết kế đặc biệt để phục vụ những người yêu thích bóng đá và muốn cập nhật thông tin liên tục, nhanh chóng. Không chỉ có vậy, trang tỷ số bóng đá còn cung cấp các tỷ lệ cá cược và phân tích chi tiết về các đội bóng.
+                Một trong những điểm đặc biệt của các trang tỷ số bóng đá là giao diện thân thiện và dễ sử dụng. Người dùng có thể dễ dàng tìm kiếm thông tin về các trận đấu và giải đấu yêu thích mà không gặp khó khăn. Trang tỷ số bóng đá còn có tính năng cập nhật tỷ số trực tiếp & kqbd, giúp người dùng biết ngay kết quả của trận đấu đang diễn ra. Đây là công cụ hỗ trợ đắc lực cho những người không thể theo dõi trực tiếp các trận đấu.
+            </p>
+            <h2 id="loi-ich">Lợi ích nổi bật của trang tỷ số bóng đá</a>
+            </h2>
+            <img src="./images/images-tyso/image2.png" alt="">
+            <i>Thế mạnh nổi bật khi cá cược tại trang tỷ số bóng đá</i>
+            <p>
+                Trang tỷ số bóng đá mang lại rất nhiều lợi ích cho người dùng, giúp họ dễ dàng cập nhật các thông tin bóng đá cần thiết một cách nhanh chóng và hiệu quả. Dưới đây là những lợi ích nổi bật khi sử dụng trang tỷ số bóng đá:                
+            </p>
+            <h3 id="cap-nhat">
+                Cập nhật tỷ số trực tiếp
+            </h3>
+            <p>Trang tỷ số bóng đá cung cấp thông tin tỷ số trực tiếp của các trận đấu diễn ra trên toàn thế giới. Điều này giúp người dùng theo dõi tình hình của trận đấu yêu thích ngay lập tức, không cần phải xem truyền hình hay tìm kiếm thông qua các kênh khác.
+            </p>
+
+            <h3 id="thong-tin">Thông tin chi tiết về trận đấu
+            </h3>
+            <img src="./images/images-tyso/image3.png" alt="">
+            <i>Tại sao trang tỷ số bóng đá được xem là địa điểm cá cược hàng đầu?</i>
+            <p>Ngoài tỷ số, trang tỷ số bóng đá còn cung cấp các thông tin chi tiết về đội hình thi đấu, cầu thủ ghi bàn, thẻ phạt và các sự kiện quan trọng khác. Điều này giúp người hâm mộ hiểu rõ hơn về diễn biến của trận đấu.
+            </p>
+
+            <h3 id="lich-thi-dau">Lịch thi đấu đầy đủ</h3>
+            <p>Trang tỷ số bóng đá cung cấp lịch thi đấu của các giải đấu lớn và nhỏ trên toàn thế giới, giúp người dùng lên kế hoạch theo dõi những trận đấu mà họ quan tâm. Thông tin & dữ liệu này được trang web cập nhật liên tục và chính xác.</p>
+
+            <h3 id="truy-cap-mien-phi">Thống kê chi tiết</h3>
+            <img src="./images/images-tyso/image4.png" alt="">
+            <i>Điểm nổi bật khi cá cược online tại trang tỷ số bóng đá</i>
+            <p>Trang tỷ số bóng đá cũng cung cấp các thống kê chi tiết về các giải đấu như số bàn thắng, số trận thắng, số thẻ vàng, thẻ đỏ, giúp người hâm mộ có cái nhìn tổng quan về các đội bóng và giải đấu.
+            </p>
+
+            <h3 id="cap-nhat-nhanh-chong">Cập nhật nhanh chóng</h3>
+            <p>Trang tỷ số bóng đá trực tuyến luôn cập nhật nhanh chóng các sự kiện quan trọng trong trận đấu, giúp người dùng không bỏ lỡ những thông tin quan trọng, từ tỷ số đến các tình huống xảy ra trong trận đấu.</p>
+
+            <h2 id="chu-y">Vài chú ý cần nắm khi cá cược tại trang tỷ số bóng đá</h2>
+            <img src="./images/images-tyso/image5.png" alt="">
+            <i>Một số chú ý cần nắm khi cá cược tại trang tỷ số bóng đá</i>
+            <p>Trước khi tham gia cá cược trên các trang tỷ số bóng đá, người chơi cần lưu ý một số điểm quan trọng để tối ưu hóa cơ hội thắng và tránh những rủi ro không đáng có. Sau đây là một số chú ý cần thiết khi tham gia cá cược:
+            </p>
+            <h3 id="chon-nha-cai-uy-tin">
+                Chọn nhà cái uy tín
+            </h3>
+            <p>
+                Trước khi tham gia cá cược, người chơi cần đảm bảo rằng mình chọn được nhà cái uy tín. Điều này giúp bảo vệ quyền lợi cá nhân và tránh gặp phải những trường hợp lừa đảo. Hãy chọn những trang <b>dự đoán kết quả bóng đá</b> có giấy phép hoạt động rõ ràng.
+            </p>
+            <h3 id="tim-hieu">
+                Tìm hiểu kỹ thông tin về trận đấu
+            </h3>
+            
+            <p>Trước khi đặt cược online, anh em bet thủ nên nghiên cứu kỹ các thông tin về trận đấu, như đội hình, phong độ gần đây của các đội và lịch sử đối đầu. Việc này giúp đưa ra quyết định cá cược chính xác hơn và giảm thiểu rủi ro.
+            </p>
+            <h3 id="quan-ly-tai-chinh">Quản lý tài chính hợp lý</h3>
+            <img src="./images/images-tructiep/image6.png" alt="">
+            <i>Vài điều cần chú ý khi cá cược tại trang web này</i>
+            <p>
+                Cá cược cần có chiến lược quản lý tài chính hợp lý. Anh em cược thủ không nên đặt cược online quá mức so với khả năng tài chính của mình. Cần xác định số tiền cược hợp lý và kiên trì với chiến lược đã đề ra.
+            </p>
+            <h3 id="chon-loai-cuoc">
+                Chọn loại cược phù hợp
+            </h3>
+            <p>Trang tỷ số bóng đá cung cấp nhiều loại cược khác nhau, từ cược tỷ số, cược đội thắng, đến cược bàn thắng. Người chơi cần chọn loại cược phù hợp với hiểu biết và sở thích cá nhân để tăng cơ hội thắng.</p>
+            <h3 id="cap-nhat-ty-le-cuoc">
+                Cập nhật tỷ lệ cược
+            </h3>
+            <p>Tỷ lệ cá cược có thể thay đổi liên tục trong suốt trận đấu. Người chơi nên thường xuyên theo dõi tỷ lệ cá cược trên trang tỷ số bóng đá để có thể đưa ra quyết định hợp lý trong từng thời điểm.</p>
+            <h2 id="ket-luan">Lời kết</h2>
+            <p>Trang tỷ số bóng đá không chỉ giúp người hâm mộ dễ dàng theo dõi các trận đấu mà còn là công cụ hỗ trợ đắc lực cho những ai tham gia cá cược. Với các tính năng đa dạng, thông tin chính xác và liên tục cập nhật, <b>colatyso.com</b> chính là một điểm đến lý tưởng cho những ai yêu thích môn thể thao vua.</p>
+        </article>
+
+        <script>
+            tocbot.init({
+                tocSelector: "#toc",
+
+                // Ignore visually hidden headings?
+                ignoreSelector: ".sr-only,.sr-only *,.toc-link--ignore,.toc-link--ignore *",
+                // Ignore fully hidden headings?
+                ignoreHiddenElements: true,
+
+                contentSelector: "article.prose",
+                headingSelector: "h1,h2,h3,h4,h5,h6",
+
+                // No smoothScroll as CSS does that for us now (in modern browsers).
+                scrollSmooth: false,
+                headingsOffset: 64 + 16 * 2,
+
+                listClass: "list-decimal",
+                linkClass: "transition-colors",
+                activeLinkClass: "underline text-red-900 bg-yellow-50",
+
+                // Do we want to collapse levels? If so…
+                // collapseDepth: 1,
+                // isCollapsedClass: "hidden",
+                // collapsibleClass: "pl-5",
+
+                headingLabelCallback: (string) => {
+                    // Here we could do stuff like truncation.
+                    return `${string} 😎`;
+                },
+                headingObjectCallback: (object, HTMLElement) => {
+                    console.log(object, HTMLElement);
+                    return object;
+                }
+            });
+            document.querySelector(".menu-aside").addEventListener("click", function () {
+                document.querySelector("aside").classList.toggle("active");
+            });
+        </script>
+        <script src="./js/main.js"></script>
+    </main>
+</body>
+
+</html>

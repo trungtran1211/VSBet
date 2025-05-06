@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colatv.live</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.15/tailwind.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/@tailwindcss/typography@0.4.x/dist/typography.min.css">
+    <link rel="stylesheet" href="./css/header.css">
+</head>
+
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.11.1/tocbot.min.js"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: calc(64px + 16px);
+        }
+
+        .table-of-contents {
+            li {
+
+                ul,
+                ol {
+                    padding-left: 1em;
+                }
+            }
+        }
+
+        body {
+            background: url("../images/bg/bg1.png") no-repeat center center/cover;
+            color: #FFF;
+        }
+
+        main {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        article {
+            padding-left: 2em;
+            flex-basis: 0;
+            flex-grow: 999;
+            min-width: 50%;
+        }
+
+        aside {
+            flex-grow: 1;
+            flex-basis: 200px;
+            align-self: start;
+            position: sticky;
+            top: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-family: svn-agency;
+            font-size: 20px;
+            font-weight: 400;
+        }
+
+        @media (max-width: 768px) {
+            aside {
+                position: fixed;
+                width: 70%;
+                left: 0;
+                transform: translateX(-100%);
+                background-color: #000;
+                top: 100px;
+                flex-basis: 100%;
+                font-size: 18px;
+                min-height: auto;
+                padding: 20px;
+            }
+
+            aside.active {
+                transform: translateX(0);
+            }
+
+            article {
+                flex-basis: 100%;
+                padding-left: 0;
+            }
+            .menu-aside {
+                position: fixed;
+                top: 50%;
+                right: 20px;
+            }
+        }
+
+        .prose,
+        .prose h1,
+        .prose h2,
+        .prose h3 {
+            color: #FFF;
+        }
+
+        .prose a {
+            color: #FFF;
+            text-decoration: underline;
+        }
+
+        kbd {
+            border: 1px solid grey;
+        }
+        .box4-img1 {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            left: -60px;
+        }
+        .box4-img2 {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%) scale(0.9);
+            right: 0px;
+        }
+    </style>
+    <header data-aos="fade-down" data-aos-easing="linear" data-aos-duration="800">
+        <div class="container">
+            <div class="header-container">
+                <div class="header-t">
+                    <div class="logo">
+                        <img src="./images/Logo.png" alt="">
+                    </div>
+                    <div class="header-bt pc">
+                        <nav class="list-menu">
+                            <ul>
+                                <li><a href="https://vsbet80.com/">Trang chủ</a></li>
+                                <li><a href="/colatv-live.html">Trực tiếp bóng đá</a></li>
+                                <li><a href="/colatyso.html">Tỷ số bóng đá</a></li>
+                                <li><a href="#hoat-dong-xa-hoi">Hoạt động xã hội</a></li>
+                                <li><a href="#tai-tro">Tài trợ</a></li>
+                                <li><a href="https://vsbet80.com/customerService">Liên hệ</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="pc">
+                        <a href="https://vsbet80.com/login" class="btn pc">Đăng nhập</a>
+                        <a href="https://vsbet80.com/registered" class="btn pc">Đăng ký</a>
+                    </div>
+                    <div class="menu mb">
+                        <img src="./images/menu.svg" alt="">
+                    </div>
+                </div>
+                <div class="bg-menu"></div>
+                <div class="header-bt mb header-bt-mb">
+                    <div class="close mb">
+                        <img src="./images/close.svg" alt="">
+                    </div>
+                    <div class="mb">
+                        <div class="logo-mb">
+                            <img src="./images/Logo.png" alt="">
+                        </div>
+                        <div class="box-btn">
+                            <a href="https://vsbet80.com/login" class="btn mb">Đăng nhập</a>
+                            <a href="https://vsbet80.com/registered" class="btn mb">Đăng ký</a>
+                        </div>
+                    </div>
+                    <nav class="list-menu">
+                        <ul>
+                            <li><a href="https://vsbet80.com/">Trang chủ</a></li>
+                            <li><a href="/colatv-live.html">Trực tiếp bóng đá</a></li>
+                            <li><a href="/colatyso.html">Tỷ số bóng đá</a></li>
+                            <li><a href="#hoat-dong-xa-hoi">Hoạt động xã hội</a></li>
+                            <li><a href="#tai-tro">Tài trợ</a></li>
+                            <li><a href="https://vsbet80.com/customerService">Liên hệ</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="box4-img1 pc">
+        <img src="./images/bg/ct2.png" alt="">
+    </div>
+    <div class="box4-img2 pc">
+        <img src="./images/bg/ct4.png" alt="">
+    </div>
+    <main class="max-w-6xl mx-auto my-20 flex flex-col lg:flex-row gap-6 px-4">
+        
+        <aside class="w-full lg:w-1/4 mb-6 lg:mb-0">
+            <div class="table-of-contents" id="toc"></div>
+        </aside>
+        <div class="menu-aside mb">
+            <svg class="w-10 z-[999] relative" fill="#FFF" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 472.586 472.586" xml:space="preserve">
+                <g>
+                    <g>
+                        <rect width="124.721" height="124.721" />
+                    </g>
+                </g>
+                <g>
+                    <g>
+                        <rect x="173.952" width="124.721" height="124.721" />
+                    </g>
+                </g>
+                <g>
+                    <g>
+                        <rect x="347.865" width="124.721" height="124.721" />
+                    </g>
+                </g>
+                <g>
+                    <g>
+                        <rect y="173.952" width="124.721" height="124.721" />
+                    </g>
+                </g>
+                <g>
+                    <g>
+                        <rect x="173.952" y="173.952" width="124.721" height="124.721" />
+                    </g>
+                </g>
+                <g>
+                    <g>
+                        <rect x="347.865" y="173.952" width="124.721" height="124.721" />
+                    </g>
+                </g>
+                <g>
+                    <g>
+                        <rect y="347.865" width="124.721" height="124.721" />
+                    </g>
+                </g>
+                <g>
+                    <g>
+                        <rect x="173.952" y="347.865" width="124.721" height="124.721" />
+                    </g>
+                </g>
+                <g>
+                    <g>
+                        <rect x="347.865" y="347.865" width="124.721" height="124.721" />
+                    </g>
+                </g>
+            </svg>
+        </div>
+        <article class="prose w-full lg:w-3/4 xl:my-20">
+            <p>Colatv.live cung cấp các trận đấu trực tiếp bóng đá với chất lượng cao, cập nhật nhanh chóng và miễn phí, giúp người hâm mộ không bỏ lỡ bất kỳ pha bóng nào.</p>
+            <h1 id="vi-sao-can-phan-tich-doi-thu-canh-tranh"><a href="https://Colatv.live" target="_blank"
+                    rel="noopener noreferrer">Colatv.live</a> - Trang trực tiếp bóng đá miễn phí, chất lượng cao</h1>
+            <p><a href="https://Colatv.live" target="_blank" rel="noopener noreferrer">Colatv.live</a> là trang web
+                chuyên cung cấp dịch vụ trực tiếp bóng đá với chất lượng hình ảnh sắc nét và tốc độ cập nhật nhanh
+                chóng. Tại đây, người hâm mộ có thể theo dõi các trận đấu từ các giải đấu lớn đến nhỏ trên toàn thế
+                giới, hoàn toàn miễn phí. Hãy truy cập ngay để không bỏ lỡ bất kỳ khoảnh khắc nào của các trận đấu hot.
+            </p>
+
+            <h2 id="cac-buoc-phan-tich-doi-thu-canh-tranh">Giới thiệu chi tiết về trang trực tiếp bóng đá <a
+                    href="https://Colatv.live" target="_blank" rel="noopener noreferrer">Colatv.live</a></h2>
+            <img src="./images/images-tructiep/image1.png" alt="">
+            <p>Thông tin cơ bản về trang trực tiếp bóng đá <a href="https://Colatv.live" target="_blank"
+                    rel="noopener noreferrer">Colatv.live</a></p>
+            <p>
+                <a href="https://Colatv.live" target="_blank" rel="noopener noreferrer">Colatv.live</a> là một trong
+                những trang web trực tiếp bóng đá hàng đầu hiện nay, chuyên cung cấp dịch vụ xem các trận đấu từ nhiều
+                giải đấu lớn nhỏ trên toàn thế giới. Với mục tiêu mang đến trải nghiệm xem bóng đá chất lượng cao, <a
+                    href="https://Colatv.live" target="_blank" rel="noopener noreferrer">Colatv.live</a> không chỉ giúp
+                người hâm mộ theo dõi các trận đấu yêu thích mà còn cập nhật kết quả nhanh chóng và chính xác.
+                Đây là nơi lý tưởng cho những ai không thể xem bóng đá qua truyền hình hoặc muốn theo dõi trực tiếp các
+                trận đấu khi không có cơ hội đến sân. Hãy cùng khám phá những lý do tại sao <a
+                    href="https://Colatv.live" target="_blank" rel="noopener noreferrer">Colatv.live</a> lại trở thành
+                một địa chỉ đáng tin cậy đối với cộng đồng yêu bóng đá.
+            </p>
+            <h2 id="1-xac-dinh-doi-thu-canh-tranh">Các thế mạnh vượt trội có tại trang trực tiếp bóng đá <a
+                    href="https://Colatv.live" target="_blank" rel="noopener noreferrer">Colatv.live</a>
+            </h2>
+            <img src="./images/images-tructiep/image2.png" alt="">
+            <p>Một số ưu điểm nổi bật có tại trang Colatv
+                <a href="https://Colatv.live" target="_blank" rel="noopener noreferrer">Colatv.live</a> không chỉ cung
+                cấp dịch vụ xem trực tiếp bóng đá mà còn sở hữu nhiều thế mạnh khiến nó trở thành điểm đến lý tưởng của
+                người hâm mộ. Những đặc điểm nổi bật dưới đây sẽ giúp bạn hiểu rõ hơn về lý do trang web này luôn đứng
+                đầu trong lòng người yêu bóng đá.
+            </p>
+            <h3 id="chat-luong-hinh-anh-sac-net">
+                Chất lượng hình ảnh sắc nét
+            </h3>
+            <p>Một trong những thế mạnh lớn nhất của <a href="https://Colatv.live" target="_blank"
+                    rel="noopener noreferrer">Colatv.live</a> chính là chất lượng hình ảnh của các trận đấu xem bong da.
+                Trang web này cung cấp video trực tiếp với độ phân giải cao, giúp người xem có thể thưởng thức những pha
+                bóng sắc nét, chân thực và sống động. Hệ thống truyền tải dữ liệu mạnh mẽ giúp giảm thiểu tình trạng
+                giật lag, mang đến cho người hâm mộ trải nghiệm mượt mà ngay cả khi xem qua mạng internet không ổn định.
+            </p>
+
+            <h3 id="cap-nhat-nhanh-chong">Cập nhật nhanh chóng </h3>
+            <img src="./images/images-tructiep/image3.png" alt="">
+            <p>Luôn cập nhật các thông tin bóng đá nhanh chóng nhất <br>
+                <a href="https://Colatv.live" target="_blank" rel="noopener noreferrer">Colatv.live</a> không chỉ là nơi
+                xem trực tiếp bóng đá mà còn là trang cung cấp thông tin nhanh chóng về các trận đấu. Người xem có thể
+                dễ dàng cập nhật tỷ số, thông tin đội hình, thời gian thi đấu và các thống kê khác trong suốt trận đấu.
+                Việc cập nhật tỷ số trực tiếp và chi tiết của từng trận đấu giúp người hâm mộ không bỏ lỡ bất kỳ khoảnh
+                khắc nào, dù đang ở bất kỳ đâu.
+            </p>
+
+            <h3 id="giao-dien-than-thien">Đánh giá điểm mạnh, điểm yếu</h3>
+            <p>Trang web <a href="https://Colatv.live" target="_blank" rel="noopener noreferrer">Colatv.live</a> có giao
+                diện đơn giản và dễ sử dụng, cho phép người xem dễ dàng tìm kiếm trận đấu yêu thích mà không gặp phải
+                khó khăn. Với thiết kế tối ưu, người dùng chỉ cần vài cú nhấp chuột để bắt đầu xem trực tiếp các trận
+                đấu. Giao diện này đặc biệt phù hợp với cả những người ít quen thuộc với công nghệ, giúp việc trải
+                nghiệm bóng đá trở nên dễ dàng và thoải mái hơn bao giờ hết.</p>
+
+            <h3 id="truy-cap-mien-phi">Truy cập miễn phí</h3>
+            <p>Điểm nổi bật nữa của <a href="https://Colatv.live" target="_blank"
+                    rel="noopener noreferrer">Colatv.live</a> là người dùng có thể truy cập và xem truc tiep bong da mà
+                không cần phải đăng ký hay trả phí. Mọi trận đấu đều được cung cấp miễn phí, giúp người hâm mộ dễ dàng
+                theo dõi các giải đấu quốc tế hay các trận đấu trong nước mà không phải lo lắng về chi phí. Điều này tạo
+                điều kiện thuận lợi cho những ai yêu thích bóng đá nhưng không muốn bị ràng buộc bởi các dịch vụ trả
+                phí.
+            </p>
+
+            <h2 id="tinh-nang">Một số tính năng HOT có tại trang <a href="https://Colatv.live" target="_blank"
+                    rel="noopener noreferrer">Colatv.live</a></h2>
+            <img src="./images/images-tructiep/image4.png" alt="">
+            <p>Các tính năng đặc sắc có tại trang trực tiếp bóng đá <a href="https://Colatv.live" target="_blank"
+                    rel="noopener noreferrer">Colatv.live</a><br>
+                Bên cạnh việc cung cấp trực tiếp bóng đá hôm nay, <a href="https://Colatv.live" target="_blank"
+                    rel="noopener noreferrer">Colatv.live</a> còn có nhiều tính năng đặc biệt, mang đến trải nghiệm toàn
+                diện cho người dùng. Cùng khám phá các tính năng "HOT" mà trang web này cung cấp, giúp bạn dễ dàng theo
+                dõi mọi trận đấu yêu thích.
+            </p>
+            <h3 id="xem-laai-tran-dau">
+                Xem lại trận đấu
+            </h3>
+            <p>
+                Colatv.live không chỉ cung cấp dịch vụ xem trực tiếp bóng đá mà còn cho phép người dùng xem lại các trận
+                đấu đã diễn ra. Điều này rất hữu ích cho những ai bỏ lỡ các trận đấu quan trọng hoặc muốn theo dõi lại
+                những pha bóng đặc sắc. Tính năng này giúp người hâm mộ có thể thưởng thức lại những khoảnh khắc ấn
+                tượng từ trận đấu mà không phải lo lắng về việc tìm kiếm các video từ nhiều nguồn khác nhau.
+            </p>
+            <h3 id="lich-thi-dau">
+                Lịch thi đấu chi tiết
+            </h3>
+            <img src="./images/images-tructiep/image5.png" alt="">
+            <p>Tính năng xem lịch thi đấu mọi lúc, mọi nơi
+                Ngoài việc cung cấp dịch vụ trực tiếp các trận đấu, Colatv.live còn cung cấp lịch thi đấu chi tiết của
+                tất cả các giải bóng đá lớn nhỏ trên thế giới. Người hâm mộ có thể dễ dàng tra cứu thời gian và ngày giờ
+                của các trận đấu sắp tới, giúp họ không bỏ lỡ bất kỳ trận cầu nào. Lịch thi đấu được cập nhật thường
+                xuyên và chính xác, đảm bảo rằng bạn sẽ luôn nắm được thông tin mới nhất về các giải đấu yêu thích.
+            </p>
+            <h3 id="chat-truc-tuyen">Tính năng chat trực tiếp</h3>
+            <p>
+                Colatv.live cung cấp tính năng chat trực tuyến, nơi người hâm mộ có thể trao đổi, bình luận về các trận
+                đấu đang diễn ra. Tính năng này giúp tạo ra một cộng đồng yêu bóng đá, nơi mọi người có thể chia sẻ cảm
+                xúc, thảo luận về các tình huống trong trận đấu và kết nối với những người có cùng sở thích. Đây là một
+                điểm cộng lớn cho Colatv.live, tạo ra một không gian tương tác sôi nổi cho người hâm mộ.
+            </p>
+            <h3 id="thong-bao-tran-dau">
+                Thông báo trận đấu
+            </h3>
+            <i>Đa dạng tính năng nổi bật về thông báo trận đấu
+            </i>
+            <img src="./images/images-tructiep/image6.png" alt="">
+            <p>Colatv.live còn cung cấp tính năng thông báo trận đấu, giúp người dùng không bỏ lỡ những trận đấu quan
+                trọng. Khi có trận đấu sắp diễn ra, người dùng có thể nhận được thông báo qua email hoặc điện thoại, đảm
+                bảo rằng họ luôn biết được thời gian và thông tin về các trận cầu hot. Đây là một tính năng rất tiện lợi
+                và hữu ích cho những người bận rộn nhưng vẫn muốn theo dõi các trận đấu bóng đá.</p>
+            <h2 id="ket-luan">Lời kết</h2>
+            <p>Với những tính năng vượt trội, Colatv.live đã chứng tỏ mình là một trong những trang web xem trực tiếp
+                bóng đá đáng tin cậy. Nếu bạn là một tín đồ của môn thể thao vua, Colatv.live sẽ là nơi lý tưởng để bạn
+                theo dõi mọi trận đấu hot mà không phải lo lắng về chi phí hay chất lượng.</p>
+        </article>
+
+        <script>
+            tocbot.init({
+                tocSelector: "#toc",
+
+                // Ignore visually hidden headings?
+                ignoreSelector: ".sr-only,.sr-only *,.toc-link--ignore,.toc-link--ignore *",
+                // Ignore fully hidden headings?
+                ignoreHiddenElements: true,
+
+                contentSelector: "article.prose",
+                headingSelector: "h1,h2,h3,h4,h5,h6",
+
+                // No smoothScroll as CSS does that for us now (in modern browsers).
+                scrollSmooth: false,
+                headingsOffset: 64 + 16 * 2,
+
+                listClass: "list-decimal",
+                linkClass: "transition-colors",
+                activeLinkClass: "underline text-red-900 bg-yellow-50",
+
+                // Do we want to collapse levels? If so…
+                // collapseDepth: 1,
+                // isCollapsedClass: "hidden",
+                // collapsibleClass: "pl-5",
+
+                headingLabelCallback: (string) => {
+                    // Here we could do stuff like truncation.
+                    return `${string} 😎`;
+                },
+                headingObjectCallback: (object, HTMLElement) => {
+                    console.log(object, HTMLElement);
+                    return object;
+                }
+            });
+            document.querySelector(".menu-aside").addEventListener("click", function () {
+                document.querySelector("aside").classList.toggle("active");
+            });
+        </script>
+        <script src="./js/main.js"></script>
+    </main>
+</body>
+
+</html>

