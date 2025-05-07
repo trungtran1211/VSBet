@@ -17,20 +17,16 @@
             scroll-behavior: smooth;
             scroll-padding-top: calc(64px + 16px);
         }
-
         .table-of-contents {
             li {
-
                 ul,
                 ol {
                     padding-left: 1em;
                 }
             }
         }
-
         body {
-            background: url("./images/bg/bg1.png") no-repeat center center/cover;
-            color: #FFF;
+            /* background: url("./images/bg/bg1.png") no-repeat center center/cover; */
         }
 
         main {
@@ -55,28 +51,26 @@
             display: flex;
             align-items: center;
             gap: 20px;
-            font-family: svn-agency;
             font-size: 20px;
             font-weight: 400;
         }
 
         @media (max-width: 768px) {
             aside {
-                position: fixed;
+                position: initial;
                 width: 70%;
                 left: 0;
-                transform: translateX(-100%);
-                background-color: #000;
                 top: 100px;
                 flex-basis: 100%;
                 font-size: 18px;
                 min-height: auto;
                 padding: 20px;
+                margin-bottom: 0;
             }
 
-            aside.active {
+            /* aside.active {
                 transform: translateX(0);
-            }
+            } */
 
             article {
                 flex-basis: 100%;
@@ -93,11 +87,13 @@
         .prose h1,
         .prose h2,
         .prose h3 {
-            color: #FFF;
+            color: #ff7e07;
         }
-
+        .prose p {
+            color: #000000;
+        }
         .prose a {
-            color: #FFF;
+            color: #000000;
             text-decoration: underline;
         }
 
@@ -118,7 +114,7 @@
         }
     </style>
     <header data-aos="fade-down" data-aos-easing="linear" data-aos-duration="800">
-        <div class="container">
+        <div class="container-header">
             <div class="header-container">
                 <div class="header-t">
                     <div class="logo">
@@ -131,8 +127,10 @@
                                 <li><a href="/VSBet/colatv-live.html">Trực tiếp bóng đá</a></li>
                                 <li><a href="/VSBet/colatyso.html">Tỷ số bóng đá</a></li>
                                 <li><a href="#hoat-dong-xa-hoi">Hoạt động xã hội</a></li>
-                                <li><a href="#tai-tro-&-lien-he">Tài trợ</a></li>
-                                <li><a href="#tai-tro-&-lien-he">Liên hệ</a></li>
+                                <li><a href="/VSBet/wheel.html">Vòng quay may mắn</a></li>
+                                <li><a href="#tai-tro" onclick="goToSection(event, 'tai-tro')">Tài trợ</a></li>
+                                <li><a href="#lien-he&tuyen-dung" onclick="goToSection(event, 'lien-he&tuyen-dung')">Liên hệ & Tuyển dụng</a></li>
+    
                             </ul>
                         </nav>
                     </div>
@@ -164,75 +162,25 @@
                             <li><a href="/VSBet/colatv-live.html">Trực tiếp bóng đá</a></li>
                             <li><a href="/VSBet/colatyso.html">Tỷ số bóng đá</a></li>
                             <li><a href="#hoatdongxahoi">Hoạt động xã hội</a></li>
-                            <li><a href="#tai-tro">Tài trợ</a></li>
-                            <li><a href="#lienhe">Liên hệ</a></li>
+                            <li><a href="#tai-tro" onclick="goToSection(event, 'tai-tro')">Tài trợ</a></li>
+                            <li><a href="#lien-he&tuyen-dung" onclick="goToSection(event, 'lien-he&tuyen-dung')">Liên hệ & Tuyển dụng</a></li>
+    
                         </ul>
                     </nav>
                 </div>
             </div>
         </div>
-    </header>
-    <div class="box4-img1 pc">
+      </header>
+    <!-- <div class="box4-img1 pc">
         <img src="./images/bg/ct2.png" alt="">
     </div>
     <div class="box4-img2 pc">
         <img src="./images/bg/ct4.png" alt="">
-    </div>
-    <main class="max-w-6xl mx-auto my-20 flex flex-col lg:flex-row gap-6 px-4 relative z-[99]">
-        
-        <aside class="w-full lg:w-1/4 mb-6 lg:mb-0">
+    </div> -->
+    <main class="max-w-6xl mx-auto my-20 flex flex-col lg:flex-row gap-6 px-4 relative z-[99] bg-white">
+        <aside class="w-full lg:w-1/4 ">
             <div class="table-of-contents" id="toc"></div>
         </aside>
-        <div class="menu-aside mb">
-            <svg class="w-10 z-[999] relative" fill="#FFF" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 472.586 472.586" xml:space="preserve">
-                <g>
-                    <g>
-                        <rect width="124.721" height="124.721" />
-                    </g>
-                </g>
-                <g>
-                    <g>
-                        <rect x="173.952" width="124.721" height="124.721" />
-                    </g>
-                </g>
-                <g>
-                    <g>
-                        <rect x="347.865" width="124.721" height="124.721" />
-                    </g>
-                </g>
-                <g>
-                    <g>
-                        <rect y="173.952" width="124.721" height="124.721" />
-                    </g>
-                </g>
-                <g>
-                    <g>
-                        <rect x="173.952" y="173.952" width="124.721" height="124.721" />
-                    </g>
-                </g>
-                <g>
-                    <g>
-                        <rect x="347.865" y="173.952" width="124.721" height="124.721" />
-                    </g>
-                </g>
-                <g>
-                    <g>
-                        <rect y="347.865" width="124.721" height="124.721" />
-                    </g>
-                </g>
-                <g>
-                    <g>
-                        <rect x="173.952" y="347.865" width="124.721" height="124.721" />
-                    </g>
-                </g>
-                <g>
-                    <g>
-                        <rect x="347.865" y="347.865" width="124.721" height="124.721" />
-                    </g>
-                </g>
-            </svg>
-        </div>
         <article class="prose w-full lg:w-3/4 xl:my-20">
             <p>Tỷ số bóng đá luôn là thông tin được anh em quan tâm hàng đầu sau mỗi trận đấu. Cập nhật nhanh chóng, chính xác giúp không bỏ lỡ bất kỳ diễn biến hấp dẫn nào.</p>
             <h1 id="colatyso"><b>Colatyso.com</b> - Trang tỷ số bóng đá nhanh và chính xác</h1>
@@ -241,14 +189,15 @@
 
             <h2 id="so-luoc">Sơ lược vài nét về trang tỷ số bóng đá</h2>
             <img src="./images/images-tyso/image1.png" alt="">
-            <p>Đôi nét nổi bật về trang tỷ số bóng đá
+            <i>Đôi nét nổi bật về trang tỷ số bóng đá </i>
+            <p>
                 Trang tỷ số bóng đá là một nền tảng cung cấp thông tin về các trận đấu bóng đá diễn ra trên toàn thế giới. Tại đây, người dùng có thể dễ dàng theo dõi tỷ số trực tiếp, lịch thi đấu và kết quả bóng đá trực tuyến các giải đấu lớn. Các trang này cung cấp dữ liệu nhanh chóng và chính xác, giúp người hâm mộ không bỏ lỡ bất kỳ diễn biến quan trọng nào. Ngoài ra, một số trang còn cung cấp thống kê chi tiết về các đội bóng, cầu thủ và các trận đấu.
                 Các trang tỷ số bóng đá còn cho phép người dùng xem lại các trận đấu đã kết thúc, giúp họ có cái nhìn tổng quan về các trận đấu qua các màn hình trực quan và dễ hiểu. Những tính năng này được thiết kế đặc biệt để phục vụ những người yêu thích bóng đá và muốn cập nhật thông tin liên tục, nhanh chóng. Không chỉ có vậy, trang tỷ số bóng đá còn cung cấp các tỷ lệ cá cược và phân tích chi tiết về các đội bóng.
                 Một trong những điểm đặc biệt của các trang tỷ số bóng đá là giao diện thân thiện và dễ sử dụng. Người dùng có thể dễ dàng tìm kiếm thông tin về các trận đấu và giải đấu yêu thích mà không gặp khó khăn. Trang tỷ số bóng đá còn có tính năng cập nhật tỷ số trực tiếp & kqbd, giúp người dùng biết ngay kết quả của trận đấu đang diễn ra. Đây là công cụ hỗ trợ đắc lực cho những người không thể theo dõi trực tiếp các trận đấu.
             </p>
             <h2 id="loi-ich">Lợi ích nổi bật của trang tỷ số bóng đá</a>
             </h2>
-            <img src="./images/images-tyso/image2.png" alt="">
+            <img src="./images/images-tyso/image2.jpg" alt="">
             <i>Thế mạnh nổi bật khi cá cược tại trang tỷ số bóng đá</i>
             <p>
                 Trang tỷ số bóng đá mang lại rất nhiều lợi ích cho người dùng, giúp họ dễ dàng cập nhật các thông tin bóng đá cần thiết một cách nhanh chóng và hiệu quả. Dưới đây là những lợi ích nổi bật khi sử dụng trang tỷ số bóng đá:                
@@ -261,7 +210,7 @@
 
             <h3 id="thong-tin">Thông tin chi tiết về trận đấu
             </h3>
-            <img src="./images/images-tyso/image3.png" alt="">
+            <img src="./images/images-tyso/image3.jpg" alt="">
             <i>Tại sao trang tỷ số bóng đá được xem là địa điểm cá cược hàng đầu?</i>
             <p>Ngoài tỷ số, trang tỷ số bóng đá còn cung cấp các thông tin chi tiết về đội hình thi đấu, cầu thủ ghi bàn, thẻ phạt và các sự kiện quan trọng khác. Điều này giúp người hâm mộ hiểu rõ hơn về diễn biến của trận đấu.
             </p>
@@ -270,7 +219,7 @@
             <p>Trang tỷ số bóng đá cung cấp lịch thi đấu của các giải đấu lớn và nhỏ trên toàn thế giới, giúp người dùng lên kế hoạch theo dõi những trận đấu mà họ quan tâm. Thông tin & dữ liệu này được trang web cập nhật liên tục và chính xác.</p>
 
             <h3 id="truy-cap-mien-phi">Thống kê chi tiết</h3>
-            <img src="./images/images-tyso/image4.png" alt="">
+            <img src="./images/images-tyso/image4.jpg" alt="">
             <i>Điểm nổi bật khi cá cược online tại trang tỷ số bóng đá</i>
             <p>Trang tỷ số bóng đá cũng cung cấp các thống kê chi tiết về các giải đấu như số bàn thắng, số trận thắng, số thẻ vàng, thẻ đỏ, giúp người hâm mộ có cái nhìn tổng quan về các đội bóng và giải đấu.
             </p>
@@ -331,7 +280,7 @@
 
                 listClass: "list-decimal",
                 linkClass: "transition-colors",
-                activeLinkClass: "underline text-red-900 bg-yellow-50",
+                activeLinkClass: "underline bg-yellow-50",
 
                 // Do we want to collapse levels? If so…
                 // collapseDepth: 1,
@@ -340,17 +289,17 @@
 
                 headingLabelCallback: (string) => {
                     // Here we could do stuff like truncation.
-                    return `${string} 😎`;
+                    return `${string}`;
                 },
                 headingObjectCallback: (object, HTMLElement) => {
                     console.log(object, HTMLElement);
                     return object;
                 }
             });
-            document.querySelector(".menu-aside").addEventListener("click", function () {
-                document.querySelector("aside").classList.toggle("active");
-            });
+            
         </script>
+
+        <script src="./js/scroll.js"></script>
         <script src="./js/main.js"></script>
     </main>
 </body>

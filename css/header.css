@@ -18,8 +18,8 @@
     font-family: svn-every;
     src: url(../fonts/SVN-Every-Movie-Every-Night.ttf);
 }
-.container {
-    max-width: 1200px;
+.container-header {
+    max-width: 1300px;
     margin: 0 auto;
 }
 .btn {

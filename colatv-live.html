@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Colatv.live</title>
+    <title>Colatyso.com</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.15/tailwind.min.css">
     <link rel="stylesheet" href="https://unpkg.com/@tailwindcss/typography@0.4.x/dist/typography.min.css">
     <link rel="stylesheet" href="./css/header.css">
@@ -17,20 +17,16 @@
             scroll-behavior: smooth;
             scroll-padding-top: calc(64px + 16px);
         }
-
         .table-of-contents {
             li {
-
                 ul,
                 ol {
                     padding-left: 1em;
                 }
             }
         }
-
         body {
-            background: url("./images/bg/bg1.png") no-repeat center center/cover;
-            color: #FFF;
+            /* background: url("./images/bg/bg1.png") no-repeat center center/cover; */
         }
 
         main {
@@ -55,28 +51,26 @@
             display: flex;
             align-items: center;
             gap: 20px;
-            font-family: svn-agency;
             font-size: 20px;
             font-weight: 400;
         }
 
         @media (max-width: 768px) {
             aside {
-                position: fixed;
+                position: initial;
                 width: 70%;
                 left: 0;
-                transform: translateX(-100%);
-                background-color: #000;
                 top: 100px;
                 flex-basis: 100%;
                 font-size: 18px;
                 min-height: auto;
                 padding: 20px;
+                margin-bottom: 0;
             }
 
-            aside.active {
+            /* aside.active {
                 transform: translateX(0);
-            }
+            } */
 
             article {
                 flex-basis: 100%;
@@ -93,11 +87,13 @@
         .prose h1,
         .prose h2,
         .prose h3 {
-            color: #FFF;
+            color: #ff7e07;
         }
-
+        .prose p {
+            color: #000000;
+        }
         .prose a {
-            color: #FFF;
+            color: #000000;
             text-decoration: underline;
         }
 
@@ -118,7 +114,7 @@
         }
     </style>
     <header data-aos="fade-down" data-aos-easing="linear" data-aos-duration="800">
-        <div class="container">
+        <div class="container-header">
             <div class="header-container">
                 <div class="header-t">
                     <div class="logo">
@@ -131,8 +127,10 @@
                                 <li><a href="/VSBet/colatv-live.html">Trực tiếp bóng đá</a></li>
                                 <li><a href="/VSBet/colatyso.html">Tỷ số bóng đá</a></li>
                                 <li><a href="#hoat-dong-xa-hoi">Hoạt động xã hội</a></li>
-                                <li><a href="#tai-tro-&-lien-he">Tài trợ</a></li>
-                                <li><a href="#tai-tro-&-lien-he">Liên hệ</a></li>
+                                <li><a href="/VSBet/wheel.html">Vòng quay may mắn</a></li>
+                                <li><a href="#tai-tro" onclick="goToSection(event, 'tai-tro')">Tài trợ</a></li>
+                                <li><a href="#lien-he&tuyen-dung" onclick="goToSection(event, 'lien-he&tuyen-dung')">Liên hệ & Tuyển dụng</a></li>
+    
                             </ul>
                         </nav>
                     </div>
@@ -164,23 +162,24 @@
                             <li><a href="/VSBet/colatv-live.html">Trực tiếp bóng đá</a></li>
                             <li><a href="/VSBet/colatyso.html">Tỷ số bóng đá</a></li>
                             <li><a href="#hoatdongxahoi">Hoạt động xã hội</a></li>
-                            <li><a href="#tai-tro">Tài trợ</a></li>
-                            <li><a href="#lienhe">Liên hệ</a></li>
+                            <li><a href="#tai-tro" onclick="goToSection(event, 'tai-tro')">Tài trợ</a></li>
+                            <li><a href="#lien-he&tuyen-dung" onclick="goToSection(event, 'lien-he&tuyen-dung')">Liên hệ & Tuyển dụng</a></li>
+    
                         </ul>
                     </nav>
                 </div>
             </div>
         </div>
-    </header>
-    <div class="box4-img1 pc">
+      </header>
+    <!-- <div class="box4-img1 pc">
         <img src="./images/bg/ct2.png" alt="">
     </div>
     <div class="box4-img2 pc">
         <img src="./images/bg/ct4.png" alt="">
-    </div>
+    </div> -->
     <main class="max-w-6xl mx-auto my-20 flex flex-col lg:flex-row gap-6 px-4 relative z-[99]">
         
-        <aside class="w-full lg:w-1/4 mb-6 lg:mb-0">
+        <aside class="w-full lg:w-1/4">
             <div class="table-of-contents" id="toc"></div>
         </aside>
         <div class="menu-aside mb">
@@ -333,9 +332,8 @@
             <h3 id="thong-bao-tran-dau">
                 Thông báo trận đấu
             </h3>
-            <i>Đa dạng tính năng nổi bật về thông báo trận đấu
-            </i>
             <img src="./images/images-tructiep/image6.png" alt="">
+            <i>Đa dạng tính năng nổi bật về thông báo trận đấu</i>
             <p>Colatv.live còn cung cấp tính năng thông báo trận đấu, giúp người dùng không bỏ lỡ những trận đấu quan
                 trọng. Khi có trận đấu sắp diễn ra, người dùng có thể nhận được thông báo qua email hoặc điện thoại, đảm
                 bảo rằng họ luôn biết được thời gian và thông tin về các trận cầu hot. Đây là một tính năng rất tiện lợi
@@ -364,7 +362,7 @@
 
                 listClass: "list-decimal",
                 linkClass: "transition-colors",
-                activeLinkClass: "underline text-red-900 bg-yellow-50",
+                activeLinkClass: "underline bg-yellow-50",
 
                 // Do we want to collapse levels? If so…
                 // collapseDepth: 1,
@@ -373,17 +371,16 @@
 
                 headingLabelCallback: (string) => {
                     // Here we could do stuff like truncation.
-                    return `${string} 😎`;
+                    return `${string}`;
                 },
                 headingObjectCallback: (object, HTMLElement) => {
                     console.log(object, HTMLElement);
                     return object;
                 }
             });
-            document.querySelector(".menu-aside").addEventListener("click", function () {
-                document.querySelector("aside").classList.toggle("active");
-            });
+            
         </script>
+        <script src="./js/scroll.js"></script>
         <script src="./js/main.js"></script>
     </main>
 </body>
