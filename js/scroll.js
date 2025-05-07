@@ -1,9 +1,9 @@
 function goToSection(event, sectionId) {
     event.preventDefault();
 
-    const homepage = window.location.origin + '/VSBet/';
+    const homepage = window.location.origin + '/VSBet';
 
-    if (window.location.pathname === '/VSBet/' || window.location.pathname === '/index.html') {
+    if (window.location.pathname === '/VSBet' || window.location.pathname === '/index.html') {
         // Nếu đang ở trang chủ thì cuộn bình thường
         const target = document.getElementById(sectionId);
         if (target) {
