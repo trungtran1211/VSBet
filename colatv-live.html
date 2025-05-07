@@ -23,11 +23,13 @@
                 ol {
                     font-size: 18px;
                     padding-left: 1em;
+                    color: rgb(255, 255, 255);
                 }
             }
+            margin-left: 20px;
         }
         body {
-            /* background: url("./images/bg/bg1.png") no-repeat center center/cover; */
+            background: url("./images/bg/bg1.png") no-repeat center center/cover;
         }
 
         main {
@@ -54,6 +56,7 @@
             gap: 20px;
             font-size: 20px;
             font-weight: 400;
+            color: #ffffff;
         }
 
         @media (max-width: 768px) {
@@ -69,17 +72,13 @@
                 margin-bottom: 0;
             }
             .prose h3 {
-                color: #111827;
+                color: #ffffff;
                 font-weight: 600;
                 font-size: 1.25em;
                 margin-top: 0em;
                 margin-bottom: 10px;
                 line-height: 1.6;
             }
-
-            /* aside.active {
-                transform: translateX(0);
-            } */
 
             article {
                 flex-basis: 100%;
@@ -92,17 +91,33 @@
             }
         }
 
-        .prose,
+        .prose {
+            color: #ffffff;
+        }
         .prose h1,
         .prose h2,
         .prose h3 {
-            color: #ff7e07;
+            color: #ffffff;
+            font-family: svn-every;
+            font-size: 20px;
+            position: relative;
+        }
+        .prose h1::before,
+        .prose h2::before,
+        .prose h3::before {
+            content: "";
+            position: absolute;
+            left: 0px;
+            bottom: -8px;
+            width: 80%;
+            height: 2px;
+            background-color: rgb(255, 136, 0);
         }
         .prose p {
-            color: #000000;
+            color: #ffffff;
         }
         .prose a {
-            color: #000000;
+            color: #ffffff;
             text-decoration: underline;
         }
 
@@ -121,6 +136,17 @@
             transform: translateY(-50%) scale(0.9);
             right: 0px;
         }
+        .bg-main {
+            background: rgba(70, 70, 70, 0.3);
+        }
+        /* .node-name--H1 {
+            font-family: svn-every;
+            font-size: 20px;
+            color: #fb8800 !important;
+        }
+        .transition-colors {
+            color: red;
+        } */
     </style>
     <header data-aos="fade-down" data-aos-easing="linear" data-aos-duration="800">
         <div class="container-header">
@@ -137,9 +163,8 @@
                                 <li><a href="/VSBet/colatyso.html">Tỷ số bóng đá</a></li>
                                 <li><a href="#hoat-dong-xa-hoi" onclick="goToSection(event, 'hoat-dong-xa-hoi')">Hoạt động xã hội</a></li>
                                 <li><a href="/VSBet/wheel.html">Vòng quay may mắn</a></li>
-                                <li><a href="#tai-tro" onclick="goToSection(event, 'tai-tro')">Tài trợ</a></li>
-                                <li><a href="#lien-he&tuyen-dung" onclick="goToSection(event, 'lien-he&tuyen-dung')">Liên hệ & Tuyển dụng</a></li>
-    
+                                <li><a href="/VSBet/taitro.html">Tài trợ</a></li>
+                                <li><a href="/lien-he&tuyen-dung.html">Liên hệ & Tuyển dụng</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -148,6 +173,10 @@
                         <a href="https://vsbet80.com/registered" class="btn pc">Đăng ký</a>
                     </div>
                     <div class="menu mb">
+                        <div>
+                            <a href="https://vsbet80.com/login" class="btn">Đăng nhập</a>
+                            <a href="https://vsbet80.com/registered" class="btn">Đăng ký</a>
+                        </div>
                         <img src="./images/menu.svg" alt="">
                     </div>
                 </div>
@@ -171,9 +200,9 @@
                             <li><a href="/VSBet/colatv-live.html">Trực tiếp bóng đá</a></li>
                             <li><a href="/VSBet/colatyso.html">Tỷ số bóng đá</a></li>
                             <li><a href="#hoat-dong-xa-hoi" onclick="goToSection(event, 'hoat-dong-xa-hoi')">Hoạt động xã hội</a></li>
-                            <li><a href="#tai-tro" onclick="goToSection(event, 'tai-tro')">Tài trợ</a></li>
-                            <li><a href="#lien-he&tuyen-dung" onclick="goToSection(event, 'lien-he&tuyen-dung')">Liên hệ & Tuyển dụng</a></li>
-    
+                            <li><a href="/VSBet/wheel.html">Vòng quay may mắn</a></li>
+                            <li><a href="/VSBet/taitro.html">Tài trợ</a></li>
+                            <li><a href="/lien-he&tuyen-dung.html">Liên hệ & Tuyển dụng</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -186,12 +215,11 @@
     <div class="box4-img2 hidden 2xl:block">
         <img src="./images/bg/ct4.png" alt="">
     </div>
-    <main class="max-w-6xl mx-auto my-20 flex flex-col lg:flex-row gap-6 px-4 relative z-[99]">
-        
+    <main class="max-w-6xl mx-auto my-16 lg:my-10 flex flex-col lg:flex-row gap-6 px-4 relative z-[99] bg-main">
         <aside class="w-full lg:w-1/4">
             <div class="table-of-contents" id="toc"></div>
         </aside>
-        <div class="menu-aside mb">
+        <!-- <div class="menu-aside mb">
             <svg class="w-10 z-[999] relative" fill="#FFF" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 472.586 472.586" xml:space="preserve">
                 <g>
@@ -240,7 +268,7 @@
                     </g>
                 </g>
             </svg>
-        </div>
+        </div> -->
         <article class="prose w-full lg:w-3/4 xl:my-20">
             <p>Colatv.live cung cấp các trận đấu trực tiếp bóng đá với chất lượng cao, cập nhật nhanh chóng và miễn phí, giúp người hâm mộ không bỏ lỡ bất kỳ pha bóng nào.</p>
             <h1 id="vi-sao-can-phan-tich-doi-thu-canh-tranh">Colatv.live - Trang trực tiếp bóng đá miễn phí, chất lượng cao</h1>
@@ -353,45 +381,98 @@
                 theo dõi mọi trận đấu hot mà không phải lo lắng về chi phí hay chất lượng.</p>
         </article>
 
-        <script>
-            tocbot.init({
-                tocSelector: "#toc",
-
-                // Ignore visually hidden headings?
-                ignoreSelector: ".sr-only,.sr-only *,.toc-link--ignore,.toc-link--ignore *",
-                // Ignore fully hidden headings?
-                ignoreHiddenElements: true,
-
-                contentSelector: "article.prose",
-                headingSelector: "h1,h2,h3,h4,h5,h6",
-
-                // No smoothScroll as CSS does that for us now (in modern browsers).
-                scrollSmooth: false,
-                headingsOffset: 64 + 16 * 2,
-
-                listClass: "list-decimal",
-                linkClass: "transition-colors",
-                activeLinkClass: "underline bg-yellow-50",
-
-                // Do we want to collapse levels? If so…
-                // collapseDepth: 1,
-                // isCollapsedClass: "hidden",
-                // collapsibleClass: "pl-5",
-
-                headingLabelCallback: (string) => {
-                    // Here we could do stuff like truncation.
-                    return `${string}`;
-                },
-                headingObjectCallback: (object, HTMLElement) => {
-                    console.log(object, HTMLElement);
-                    return object;
-                }
-            });
-            
-        </script>
         <script src="./js/scroll.js"></script>
         <script src="./js/main.js"></script>
     </main>
+
+    <footer>
+        
+        <div class="container">
+            <div class="ft-container" id="lien-he&tuyen-dung">
+                <div class="ft1">
+                    <div class="ft1-logo">
+                        <img src="./images/Logo.png" alt="">
+                    </div>
+                    <div class="ft1-text">
+                        <p>VSBet" chính thức hoạt động từ năm 2011. Uy tín, chất lượng, phục vụ tận tâm là tôn chỉ của công ty chúng tôi. Quy tụ những thành viên ưu tú trong ngành cá cược trên khắp thế giới, chúng tôi có một đội ngũ giàu kinh nghiệm, chuyên nghiệp để hệ thống cá cược trực tuyến luôn hoàn thiện nhất, mang đến trải nghiệm tốt nhất cho người chơi, là một trong web cá cược trực tuyến uy tín hàng đầu.</p>
+                    </div>
+                </div>
+                <div class="ft3 mb">
+                    <h3>Chính sách</h3>
+                    <ul>
+                        <li><a href="https://vsbet80.com/">Tuyên bố thương hiệu</a></li>
+                        <li><a href="https://vsbet80.com/">Điều khoản pháp lý</a></li>
+                        <li><a href="https://vsbet80.com/">Chính sách bảo mật</a></li>
+                        <li><a href="https://vsbet80.com/">Thông tin liên hệ</a></li>
+                    </ul>
+                </div>
+                <div class="ft2">
+                    <h3>Liên hệ & Tuyển dụng</h3>
+                    <ul>
+                        <li><a href="https://www.facebook.com/vsbetthethao/"><img src="./images/icon/facebook.svg" alt="tiktok"></a></li>
+                        <li><a href="https://www.tiktok.com/@vsthethao2?_t=ZS-8vzRSQSnk3U"><img src="./images/icon/tiktok.svg" alt="tiktok"></a></li>
+                        <li><a href="https://www.youtube.com/@vsbetofficial"><img src="./images/icon/youtube.svg" alt="tiktok"></a></li>
+                        <li><a href="https://x.com/vsbetofficial"><img src="./images/icon/twitter.svg" alt="tiktok"></a></li>
+                        <li><a href="https://www.instagram.com/vsbet.tintuc/"><img src="./images/icon/instagram.svg" alt="tiktok"></a></li>
+                        <li><a href="https://zalo.me/0862327361"><img src="./images/icon/7044033_zalo_icon.svg" alt="zalo"></a></li>
+                        <li><a href="https://t.me/vsthethao"><img src="./images/icon/telegram.svg" alt="telegram"></a></li>
+                        
+                    </ul>
+                    <div class="tuyendung">
+                        <a href="/VSBet/tuyendung.html" target="_blank" rel="noopener noreferrer"><h5>Tuyển dụng</h5></a>
+                    </div>
+                </div>
+                <div class="ft3 pc">
+                    <h3>Chính sách</h3>
+                    <ul>
+                        <li><a href="https://vsbet80.com/">Tuyên bố thương hiệu</a></li>
+                        <li><a href="https://vsbet80.com/">Điều khoản pháp lý</a></li>
+                        <li><a href="https://vsbet80.com/">Chính sách bảo mật</a></li>
+                        <li><a href="https://vsbet80.com/">Thông tin liên hệ</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        tocbot.init({
+            tocSelector: "#toc",
+
+            // Ignore visually hidden headings?
+            ignoreSelector: ".sr-only,.sr-only *,.toc-link--ignore,.toc-link--ignore *",
+            // Ignore fully hidden headings?
+            ignoreHiddenElements: true,
+
+            contentSelector: "article.prose",
+            headingSelector: "h1,h2,h3,h4,h5,h6",
+            
+
+            // No smoothScroll as CSS does that for us now (in modern browsers).
+            scrollSmooth: false,
+            headingsOffset: 64 + 16 * 2,
+
+            listClass: "list-decimal",
+            linkClass: "transition-colors",
+            activeLinkClass: "font-bold",
+
+            // Do we want to collapse levels? If so…
+            // collapseDepth: 1,
+            // isCollapsedClass: "hidden",
+            // collapsibleClass: "pl-5",
+
+            headingLabelCallback: (string) => {
+                // Here we could do stuff like truncation.
+                return `${string}`;
+            },
+            headingObjectCallback: (object, HTMLElement) => {
+                console.log(object, HTMLElement);
+                return object;
+            }
+        });
+        
+    </script>
+    
 </body>
 
 </html>

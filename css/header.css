@@ -22,6 +22,10 @@
     max-width: 1300px;
     margin: 0 auto;
 }
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
 .btn {
     display: inline-block;
     padding: 3px 20px 5px;
@@ -85,7 +89,7 @@ header {
     display: none;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
     header {
         padding: 10px 0px;
     }
@@ -149,6 +153,119 @@ header {
         transform: scaleX(0);
         transition: transform 0.3s ease-in-out;
     }
+    .menu {
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+    }
+    .btn {
+        display: inline-block;
+        padding: 3px 20px 5px;
+        font-family: svn-agency;
+        line-height: normal;
+        background: var(--white);
+        color: #262626;
+        border-radius: 5px;
+        font-size: 14px !important;
+    }
+}
+@media (max-width: 380px) {
+    .logo img {
+        width: 90px;
+    }
+}
+
+/* Footer */
+footer {
+    background: url("../images/bg/bg-ft.png") no-repeat center center/cover;
+    width: 100%;
+    padding: 50px 0px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.ft-container {
+    display: flex;
+    gap: 100px;
+}
+.ft-container h3 {
+    font-family: svn-every;
+    color: var(--white);
+    font-size: 18px;
+    line-height: normal;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+.ft-container h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 80%;
+    height: 3px;
+    background-color: var(--orange);
+}
+.ft1, .ft2, .ft3 {
+    width: 33%;
+}
+.ft1 .ft1-logo img {
+    width: 250px;
+    margin-bottom: 20px;
+}
+.ft1 .ft1-text p {
+    font-family: svn-bree;
+    color: var(--white);
+    font-size: 16px;
+    line-height: normal;
+    margin-bottom: 20px;
+}
+.ft2 ul {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.ft2 ul li a img {
+    width: 50px;
+}
+.ft3 ul a {
+    font-family: svn-bree;
+    color: var(--white);
+    font-size: 16px;
+    line-height: normal;
+    margin-bottom: 20px;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+
+@media (max-width: 768px) {
+    .ft-container {
+        flex-direction: column;
+        gap: 20px;
+        padding: 0px 20px;
+    }
+    .ft1, .ft2, .ft3 {
+        width: 100%;
+    }
+    .ft1 .ft1-logo img {
+        width: 150px;
+        margin-bottom: 20px;
+    }
+    .ft2 ul {
+        gap: 10px;
+    }
+    .ft2 ul li a img {
+        width: 40px;
+    }
+    
+}
+footer hr {
+    width: 70%;
+    margin: 20px auto;
+    height: 1px;
+    background: #ffffff;
+    border: none;
 }
 
 .fp-watermark {
@@ -164,4 +281,15 @@ header {
     .mb {
         display: block;
     }
+}
+.tuyendung {
+    margin-top: 10px;
+}
+.tuyendung a {
+    font-family: svn-every;
+    color: var(--white);
+    font-size: 20px;
+    line-height: normal;
+    margin-bottom: 20px;
+    display: inline-block;
 }
