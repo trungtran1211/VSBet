@@ -14,7 +14,6 @@
             margin: 0;
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             min-height: 100vh;
-            padding: 20px;
         }
 
         body {
@@ -27,7 +26,8 @@
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
             font-size: 2.5rem;
             margin-bottom: 20px;
-            margin-top: 130px;
+            padding-top: 100px;
+            margin: 0 !important;
         }
 
         .wheel-container {
@@ -269,6 +269,8 @@
             align-items: center;
             padding: 20px;
             background-size: cover;
+            position: relative;
+            z-index: 99;
         }
 
         .box {
@@ -591,7 +593,14 @@
             document.getElementById("wheel").style.transform = `rotate(-${angle}deg)`;
     
             setTimeout(() => {
-                document.getElementById("prizeText").textContent = `Bạn đã trúng: ${selectedPrize.label}`;
+                document.getElementById("prizeText").innerHTML = 
+                `VSbet chúc mừng bạn đã trúng giải thưởng: <strong>${selectedPrize.label}</strong> 
+                <br> Liên hệ CSKH để nhận thưởng bạn nhé! <br>
+                <strong>Tele:</strong> @vsthethao <br>
+                <strong>Zalo:</strong> +84 862 327 361
+                <br><br>
+                Nhớ chụp hình giải thưởng lại để xác nhận với CSKH nhé!`;
+
                 document.getElementById("resultPopup").style.display = "flex";
                 // const container = document.querySelector('.fireworks')
                 // const fireworks = new Fireworks.default(container)
