@@ -3,7 +3,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     if (window.innerWidth > 768) {
         new fullpage('#fullpage', {
-            anchors: ['ve-chung-toi', 'truc-tiep-bong-da', 'ty-so-bong-da', 'hoat-dong-xa-hoi', 'tai-tro'],
+            anchors: ['ve-chung-toi', 'truc-tiep-bong-da', 'ty-so-bong-da', 'hoat-dong-xa-hoi', 'tai-tro-&-lien-he'],
             navigation: true,
             onLeave: function (origin, destination, direction) {
                 // chạy animation ở đây
