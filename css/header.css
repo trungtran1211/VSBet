@@ -85,7 +85,7 @@ header {
     display: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     header {
         padding: 10px 0px;
     }
@@ -157,7 +157,7 @@ header {
 .mb {
     display: none;
 }
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .pc {
         display: none;
     }
