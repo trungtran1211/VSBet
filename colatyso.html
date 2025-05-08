@@ -59,7 +59,30 @@
             color: #ffffff;
         }
 
+        .btn-link {
+            font-family: svn-every;
+            padding: 3px 20px 5px;
+            font-family: svn-agency;
+            line-height: normal;
+            background: var(--orange);
+            color: #262626;
+            border-radius: 5px;
+            font-size: 18px;
+            width: 200px;
+            height: 40px;
+            margin-bottom: 20px;
+        }
+        .btn-link:hover {
+            transition: all 0.3s ease;
+            box-shadow: 0px 4px 0px rgb(255, 255, 255);
+            transform: scale(1.05);
+        }
+
         @media (max-width: 768px) {
+            .btn-link { 
+                margin-top: 30px;
+                margin-bottom: 10px;
+            }
             aside {
                 position: initial;
                 width: 70%;
@@ -213,8 +236,8 @@
         <img src="./images/bg/ct4.png" alt="">
     </div>
     <main class="max-w-6xl mx-auto  my-16 lg:my-10 flex flex-col lg:flex-row xl:gap-6 px-4 relative z-[99] bg-main">
-        <a href="https://colatyso.com" target="_blank" rel="noopener noreferrer" class="flex md:hidden gap-3 items-center pl-5 text-white pt-3">
-            👉<p style="font-size: 20px; text-decoration-line: underline;">
+        <a href="https://colatyso.com" target="_blank" rel="noopener noreferrer" class="btn-link flex md:hidden gap-3 items-center pl-5 text-white pt-3">
+            👉<p style="font-size: 20px; text-decoration-line: underline; color: white;">
                  Xem tỷ số tại đây
             </p>
         </a>
@@ -223,8 +246,8 @@
         </aside>
         <article class="prose w-full lg:w-3/4 xl:my-20">
             <p>Tỷ số bóng đá luôn là thông tin được anh em quan tâm hàng đầu sau mỗi trận đấu. Cập nhật nhanh chóng, chính xác giúp không bỏ lỡ bất kỳ diễn biến hấp dẫn nào.</p>
-            <a href="https://colatyso.com" target="_blank" rel="noopener noreferrer" class="hidden md:flex gap-3 items-center !no-underline">
-                👉<p style="font-size: 20px; text-decoration-line: underline;">
+            <a style="text-decoration: none;" href="https://colatyso.com" target="_blank" rel="noopener noreferrer" class="btn-link hidden md:flex gap-3 items-center !no-underline">
+                👉<p style="font-size: 20px; text-decoration-line: underline; color: white;">
                      Xem tỷ số tại đây
                 </p>
             </a>
