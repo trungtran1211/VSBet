@@ -5,23 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tuyển Dụng & Hợp Tác</title>
   <link rel="stylesheet" href="./css/header.css">
+  
   <style>
     body {
         font-family: Arial, sans-serif;
         line-height: 1.6;
-        background-color: #f9f9f9;
-        padding: 20px;
-        color: #333;
+        color: #ffffff;
         background: url("./images/bg/bg1.png") no-repeat center center/cover;
     }
     .container-td {
-      max-width: 800px;
+      max-width: 1200px;
       margin: auto;
-      background: #fff;
+      background: rgba(70, 70, 70, 0.3);
       padding: 30px;
       border-radius: 8px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       margin-top: 80px;
+      margin-bottom: 20px;
     }
     h1 {
       color: #0073e6;
@@ -29,7 +29,8 @@
       margin-bottom: 20px;
     }
     h2 {
-      color: #333;
+      color: #ffffff;
+      font-family: svn-every;
       margin-top: 30px;
     }
     ul {
@@ -43,24 +44,46 @@
       margin-bottom: 8px;
     }
     .highlight {
-      background-color: #e6f7ff;
+      background-color: #ff9224;
       padding: 10px 15px;
       border-left: 4px solid #1890ff;
       margin-top: 10px;
       margin-bottom: 20px;
     }
     .contact {
-      background: #f1f1f1;
+      background: #fc8209;
       padding: 15px;
       border-radius: 5px;
       margin-top: 20px;
     }
     .contact a {
-      color: #0073e6;
+      color: #000000;
       text-decoration: none;
     }
     .contact a:hover {
       text-decoration: underline;
+    }
+    .box-lienhe ul li a img {
+      width: 50px;
+    }
+    .box-lienhe ul {
+      display: flex;
+      gap: 20px;
+    }
+    .box-lienhe {
+      display: flex;
+      align-items: center;
+    }
+    .box-lh ul {
+      display: flex;
+      flex-direction: column;
+    }
+    .box-lh ul li a {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      color: #FFF;
+      font-size: 20px;
     }
   </style>
 </head>
@@ -80,8 +103,8 @@
                             <li><a href="/VSBet/colatyso.html">Tỷ số bóng đá</a></li>
                             <li><a href="#hoat-dong-xa-hoi" onclick="goToSection(event, 'hoat-dong-xa-hoi')">Hoạt động xã hội</a></li>
                             <li><a href="/VSBet/wheel.html">Vòng quay may mắn</a></li>
-                            <li><a href="#tai-tro" onclick="goToSection(event, 'tai-tro')">Tài trợ</a></li>
-                            <li><a href="#lien-he&tuyen-dung" onclick="goToSection(event, 'lien-he&tuyen-dung')">Liên hệ & Tuyển dụng</a></li>
+                            <li><a href="/VSBet/taitro.html">Tài trợ</a></li>
+                            <li><a href="/VSBet/lienhe&tuyendung.html">Liên hệ & Tuyển dụng</a></li>
 
                         </ul>
                     </nav>
@@ -114,8 +137,8 @@
                         <li><a href="/VSBet/colatv-live.html">Trực tiếp bóng đá</a></li>
                         <li><a href="/VSBet/colatyso.html">Tỷ số bóng đá</a></li>
                         <li><a href="#hoat-dong-xa-hoi" onclick="goToSection(event, 'hoat-dong-xa-hoi')">Hoạt động xã hội</a></li>
-                        <li><a href="#tai-tro" onclick="goToSection(event, 'tai-tro')">Tài trợ</a></li>
-                        <li><a href="#lien-he&tuyen-dung" onclick="goToSection(event, 'lien-he&tuyen-dung')">Liên hệ & Tuyển dụng</a></li>
+                        <li><a href="/VSBet/taitro.html">Tài trợ</a></li>
+                        <li><a href="/VSBet/lienhe&tuyendung.html">Liên hệ & Tuyển dụng</a></li>
 
                     </ul>
                 </nav>
@@ -124,6 +147,42 @@
     </div>
 </header>
   <div class="container-td">
+    <h2>LIÊN HỆ VÀ TUYỂN DỤNG</h2>
+    <h2>LIÊN HỆ</h2>
+    <div class="box-lienhe">
+      <div class="pc">
+          <img style="max-width: 300px;" src="./images/contact.png" alt="">
+      </div>
+      <div>
+        
+        <div class="box-lh">
+          <ul>
+              <li>
+                <a href="https://zalo.me/0862327361">
+                  <img src="./images/icon/7044033_zalo_icon.svg" alt="zalo">
+                  <span>+84 862 327 361</span>
+                </a>
+              </li>
+            <li>
+              <a href="https://t.me/vsthethao">
+                <img src="./images/icon/telegram.svg" alt="telegram">
+                <span>@vsthethao</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <ul>
+          <li><a href="https://www.facebook.com/vsbetthethao/"><img src="./images/icon/facebook.svg" alt="tiktok"></a></li>
+          <li><a href="https://www.tiktok.com/@vsthethao2?_t=ZS-8vzRSQSnk3U"><img src="./images/icon/tiktok.svg" alt="tiktok"></a></li>
+          <li><a href="https://www.youtube.com/@vsbetofficial"><img src="./images/icon/youtube.svg" alt="tiktok"></a></li>
+          <li><a href="https://x.com/vsbetofficial"><img src="./images/icon/twitter.svg" alt="tiktok"></a></li>
+          <li><a href="https://www.instagram.com/vsbet.tintuc/"><img src="./images/icon/instagram.svg" alt="tiktok"></a></li>
+          
+          
+        </ul>
+      </div>
+    </div>
+    <h2>TUYỂN DỤNG</h2>
     <p>Chúng tôi đang mở rộng đội ngũ và tìm kiếm những cá nhân/tập thể tiềm năng cùng đồng hành phát triển các dự án <b> SEO, truyền thông, quảng cáo </b> và nền tảng website.</p>
 
     <h2>🔹 Vị trí tuyển dụng</h2>
@@ -157,6 +216,54 @@
       <p><strong>👉 Ưu tiên:</strong> ứng viên / đối tác có kinh nghiệm trong lĩnh vực SEO, MMO, truyền thông bóng đá</p>
     </div>
   </div>
+  <footer>
+    <div class="container">
+        <div class="ft-container" id="lien-he&tuyen-dung">
+            <div class="ft1">
+                <div class="ft1-logo">
+                    <img src="./images/Logo.png" alt="">
+                </div>
+                <div class="ft1-text">
+                    <p>VSBet" chính thức hoạt động từ năm 2011. Uy tín, chất lượng, phục vụ tận tâm là tôn chỉ của công ty chúng tôi. Quy tụ những thành viên ưu tú trong ngành cá cược trên khắp thế giới, chúng tôi có một đội ngũ giàu kinh nghiệm, chuyên nghiệp để hệ thống cá cược trực tuyến luôn hoàn thiện nhất, mang đến trải nghiệm tốt nhất cho người chơi, là một trong web cá cược trực tuyến uy tín hàng đầu.</p>
+                </div>
+            </div>
+            <div class="ft3 mb">
+                <h3>Chính sách</h3>
+                <ul>
+                    <li><a href="https://vsbet80.com/">Tuyên bố thương hiệu</a></li>
+                    <li><a href="https://vsbet80.com/">Điều khoản pháp lý</a></li>
+                    <li><a href="https://vsbet80.com/">Chính sách bảo mật</a></li>
+                    <li><a href="https://vsbet80.com/">Thông tin liên hệ</a></li>
+                </ul>
+            </div>
+            <div class="ft2">
+                <h3>Liên hệ & Tuyển dụng</h3>
+                <ul>
+                    <li><a href="https://www.facebook.com/vsbetthethao/"><img src="./images/icon/facebook.svg" alt="tiktok"></a></li>
+                    <li><a href="https://www.tiktok.com/@vsthethao2?_t=ZS-8vzRSQSnk3U"><img src="./images/icon/tiktok.svg" alt="tiktok"></a></li>
+                    <li><a href="https://www.youtube.com/@vsbetofficial"><img src="./images/icon/youtube.svg" alt="tiktok"></a></li>
+                    <li><a href="https://x.com/vsbetofficial"><img src="./images/icon/twitter.svg" alt="tiktok"></a></li>
+                    <li><a href="https://www.instagram.com/vsbet.tintuc/"><img src="./images/icon/instagram.svg" alt="tiktok"></a></li>
+                    <li><a href="https://zalo.me/0862327361"><img src="./images/icon/7044033_zalo_icon.svg" alt="zalo"></a></li>
+                    <li><a href="https://t.me/vsthethao"><img src="./images/icon/telegram.svg" alt="telegram"></a></li>
+                    
+                </ul>
+                <div class="tuyendung">
+                    <a href="/VSBet/tuyendung.html" target="_blank" rel="noopener noreferrer"><h5>Tuyển dụng</h5></a>
+                </div>
+            </div>
+            <div class="ft3 pc">
+                <h3>Chính sách</h3>
+                <ul>
+                    <li><a href="https://vsbet80.com/">Tuyên bố thương hiệu</a></li>
+                    <li><a href="https://vsbet80.com/">Điều khoản pháp lý</a></li>
+                    <li><a href="https://vsbet80.com/">Chính sách bảo mật</a></li>
+                    <li><a href="https://vsbet80.com/">Thông tin liên hệ</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
   <script src="./js/scroll.js"></script>
   <script src="./js/main.js"></script>
 </body>
