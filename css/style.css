@@ -459,7 +459,6 @@ footer {
     background: url("../images/bg/bg-ft.png") no-repeat center center/cover;
     width: 100%;
     padding: 50px 0px;
-    height: 100vh;
     display: flex;
     justify-content: center;
     flex-direction: column;
