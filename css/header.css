@@ -160,7 +160,7 @@ header {
     }
     .btn {
         display: inline-block;
-        padding: 3px 20px 5px;
+        padding: 3px 15px 5px;
         font-family: svn-agency;
         line-height: normal;
         background: var(--white);
@@ -171,7 +171,7 @@ header {
 }
 @media (max-width: 380px) {
     .logo img {
-        width: 90px;
+        width: 68px;
     }
 }
 
